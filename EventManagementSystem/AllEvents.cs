@@ -43,7 +43,28 @@ namespace EventManagementSystem
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void addEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EventDetail form = new EventDetail();
+            form.Show();
+            Hide();
+        }
+
+        private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllUsers form = new AllUsers();
+            form.Show();
+            Hide();
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserDetail form = new UserDetail();
+            form.Show();
+            Hide();
         }
     }
 }

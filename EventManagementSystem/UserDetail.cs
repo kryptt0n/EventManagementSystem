@@ -10,25 +10,25 @@ using System.Windows.Forms;
 
 namespace EventManagementSystem
 {
-    public partial class EventAttendees : Form
+    public partial class UserDetail : Form
     {
-        public EventAttendees()
+        public UserDetail()
         {
             InitializeComponent();
         }
 
-        private void btnAddAttendee_Click(object sender, EventArgs e)
-        {
-            AddAttendee addAttendee = new AddAttendee();
-            addAttendee.Show();
-
-        }
-
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
             AllEvents allEvents = new AllEvents();
             allEvents.Show();
+            Hide();
+        }
+
+        private void addEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EventDetail eventDetail = new EventDetail();
+            eventDetail.Show();
+            Hide();
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +42,20 @@ namespace EventManagementSystem
         {
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
+            Hide();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            AllUsers allUsers = new AllUsers();
+            allUsers.Show();
+            Hide();
+        }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            AllUsers allUsers = new AllUsers();
+            allUsers.Show();
             Hide();
         }
     }
