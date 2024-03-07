@@ -26,7 +26,8 @@ namespace EventManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            EventDetail eventDetail = new EventDetail();
+            eventDetail.Show();
         }
 
         private void btnEditEvent_Click(object sender, EventArgs e)
@@ -65,6 +66,12 @@ namespace EventManagementSystem
             UserDetail form = new UserDetail();
             form.Show();
             Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AttendeeRegist regist = new AttendeeRegist();
+            regist.Show();
         }
     }
 }

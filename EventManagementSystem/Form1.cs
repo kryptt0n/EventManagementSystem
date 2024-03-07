@@ -9,8 +9,9 @@ namespace EventManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AllEvents allEvents = new AllEvents();
-            allEvents.Show();
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            Hide();
         }
     }
 }
