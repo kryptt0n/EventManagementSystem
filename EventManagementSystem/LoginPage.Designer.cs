@@ -34,13 +34,12 @@
             txtPassword = new TextBox();
             btnLogin = new Button();
             btnExit = new Button();
-            label3 = new Label();
             SuspendLayout();
             // 
             // UserName
             // 
             UserName.AutoSize = true;
-            UserName.Location = new Point(86, 56);
+            UserName.Location = new Point(86, 94);
             UserName.Name = "UserName";
             UserName.Size = new Size(100, 24);
             UserName.TabIndex = 0;
@@ -49,7 +48,7 @@
             // Password
             // 
             Password.AutoSize = true;
-            Password.Location = new Point(86, 106);
+            Password.Location = new Point(86, 144);
             Password.Name = "Password";
             Password.Size = new Size(91, 24);
             Password.TabIndex = 1;
@@ -57,14 +56,14 @@
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(194, 56);
+            txtUserName.Location = new Point(194, 94);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(150, 30);
             txtUserName.TabIndex = 2;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(194, 103);
+            txtPassword.Location = new Point(194, 141);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(150, 30);
             txtPassword.TabIndex = 3;
@@ -89,20 +88,11 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(83, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 24);
-            label3.TabIndex = 6;
-            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(433, 298);
-            Controls.Add(label3);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -123,6 +113,5 @@
         private TextBox txtPassword;
         private Button btnLogin;
         private Button btnExit;
-        private Label label3;
     }
 }
