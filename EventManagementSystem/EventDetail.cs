@@ -47,5 +47,41 @@ namespace EventManagementSystem
             userDetail.Show();
             Hide();
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void addEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EventDetail eventDetail = new EventDetail();
+            eventDetail.Show();
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void myEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllEvents allEvents = new AllEvents();
+            allEvents.Show();
+            this.Close();
+        }
+
+        private void registForEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllEvents registForEvents = new AllEvents();
+            registForEvents.Show();
+            this.Close();
+        }
     }
 }

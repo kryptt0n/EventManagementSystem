@@ -19,7 +19,9 @@ namespace EventManagementSystem
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AllUsers allUsers = new AllUsers();
+            allUsers.Show();
+            this.Close();
         }
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +57,22 @@ namespace EventManagementSystem
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
             Hide();
+        }
+
+        private void attendeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

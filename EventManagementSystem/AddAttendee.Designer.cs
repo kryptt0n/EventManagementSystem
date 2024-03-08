@@ -44,11 +44,15 @@
             txtUserName = new TextBox();
             btnSearchUser = new Button();
             label2 = new Label();
-            listBox1 = new ListBox();
             btnAddAttendee = new Button();
             btnCancelAddAttendee = new Button();
+            dataGridView1 = new DataGridView();
+            UserName = new DataGridViewTextBoxColumn();
+            UserEmail = new DataGridViewTextBoxColumn();
+            UserPhone = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -57,8 +61,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(1093, 42);
+            menuStrip1.Size = new Size(925, 32);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,69 +69,70 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(71, 36);
+            fileToolStripMenuItem.Size = new Size(56, 28);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(206, 44);
+            loginToolStripMenuItem.Size = new Size(270, 34);
             loginToolStripMenuItem.Text = "Login";
+            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(206, 44);
+            exitToolStripMenuItem.Size = new Size(270, 34);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // eventsToolStripMenuItem
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(103, 36);
+            eventsToolStripMenuItem.Size = new Size(81, 28);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(359, 44);
+            viewEventsToolStripMenuItem.Size = new Size(270, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(359, 44);
+            addEventToolStripMenuItem.Size = new Size(270, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             // 
             // usersToolStripMenuItem
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(91, 36);
+            usersToolStripMenuItem.Size = new Size(72, 28);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(359, 44);
+            allUsersToolStripMenuItem.Size = new Size(270, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(359, 44);
+            addUserToolStripMenuItem.Size = new Size(270, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(60, 100);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(51, 75);
             label1.Name = "label1";
-            label1.Size = new Size(0, 32);
+            label1.Size = new Size(0, 24);
             label1.TabIndex = 4;
             // 
             // groupBox1
@@ -137,21 +141,18 @@
             groupBox1.Controls.Add(txtUserName);
             groupBox1.Controls.Add(btnSearchUser);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(60, 100);
-            groupBox1.Margin = new Padding(4);
+            groupBox1.Location = new Point(51, 75);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(974, 197);
+            groupBox1.Size = new Size(824, 148);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Text = "Search Attendee";
             // 
             // btnCancelSearchUser
             // 
-            btnCancelSearchUser.Location = new Point(207, 120);
-            btnCancelSearchUser.Margin = new Padding(4);
+            btnCancelSearchUser.Location = new Point(175, 90);
             btnCancelSearchUser.Name = "btnCancelSearchUser";
-            btnCancelSearchUser.Size = new Size(132, 45);
+            btnCancelSearchUser.Size = new Size(112, 34);
             btnCancelSearchUser.TabIndex = 15;
             btnCancelSearchUser.Text = "Clear";
             btnCancelSearchUser.UseVisualStyleBackColor = true;
@@ -160,18 +161,16 @@
             // 
             txtUserName.BackColor = SystemColors.Window;
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(178, 39);
-            txtUserName.Margin = new Padding(4);
+            txtUserName.Location = new Point(151, 29);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(286, 39);
+            txtUserName.Size = new Size(242, 30);
             txtUserName.TabIndex = 8;
             // 
             // btnSearchUser
             // 
-            btnSearchUser.Location = new Point(24, 120);
-            btnSearchUser.Margin = new Padding(4);
+            btnSearchUser.Location = new Point(30, 90);
             btnSearchUser.Name = "btnSearchUser";
-            btnSearchUser.Size = new Size(132, 45);
+            btnSearchUser.Size = new Size(112, 34);
             btnSearchUser.TabIndex = 14;
             btnSearchUser.Text = "Search";
             btnSearchUser.UseVisualStyleBackColor = true;
@@ -179,28 +178,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 43);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(20, 32);
             label2.Name = "label2";
-            label2.Size = new Size(132, 32);
+            label2.Size = new Size(105, 24);
             label2.TabIndex = 6;
             label2.Text = "User Name";
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(60, 349);
-            listBox1.Margin = new Padding(4);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(973, 292);
-            listBox1.TabIndex = 19;
-            // 
             // btnAddAttendee
             // 
-            btnAddAttendee.Location = new Point(84, 683);
-            btnAddAttendee.Margin = new Padding(4);
+            btnAddAttendee.Location = new Point(71, 512);
             btnAddAttendee.Name = "btnAddAttendee";
-            btnAddAttendee.Size = new Size(132, 45);
+            btnAddAttendee.Size = new Size(112, 34);
             btnAddAttendee.TabIndex = 20;
             btnAddAttendee.Text = "Add";
             btnAddAttendee.UseVisualStyleBackColor = true;
@@ -208,33 +196,63 @@
             // 
             // btnCancelAddAttendee
             // 
-            btnCancelAddAttendee.Location = new Point(267, 683);
-            btnCancelAddAttendee.Margin = new Padding(4);
+            btnCancelAddAttendee.Location = new Point(226, 512);
             btnCancelAddAttendee.Name = "btnCancelAddAttendee";
-            btnCancelAddAttendee.Size = new Size(132, 45);
+            btnCancelAddAttendee.Size = new Size(112, 34);
             btnCancelAddAttendee.TabIndex = 21;
             btnCancelAddAttendee.Text = "Cancel";
             btnCancelAddAttendee.UseVisualStyleBackColor = true;
             btnCancelAddAttendee.Click += btnCancelAddAttendee_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { UserName, UserEmail, UserPhone });
+            dataGridView1.Location = new Point(51, 268);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(824, 194);
+            dataGridView1.TabIndex = 22;
+            // 
+            // UserName
+            // 
+            UserName.HeaderText = "Name";
+            UserName.MinimumWidth = 8;
+            UserName.Name = "UserName";
+            UserName.Width = 200;
+            // 
+            // UserEmail
+            // 
+            UserEmail.HeaderText = "Email";
+            UserEmail.MinimumWidth = 8;
+            UserEmail.Name = "UserEmail";
+            UserEmail.Width = 200;
+            // 
+            // UserPhone
+            // 
+            UserPhone.HeaderText = "Phone";
+            UserPhone.MinimumWidth = 8;
+            UserPhone.Name = "UserPhone";
+            UserPhone.Width = 200;
+            // 
             // AddAttendee
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1093, 825);
+            ClientSize = new Size(925, 619);
+            Controls.Add(dataGridView1);
             Controls.Add(btnCancelAddAttendee);
             Controls.Add(btnAddAttendee);
-            Controls.Add(listBox1);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
-            Margin = new Padding(4);
             Name = "AddAttendee";
             Text = "Add Attendee";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,11 +272,14 @@
         private TextBox txtUserName;
         private Button btnSearchUser;
         private Label label2;
-        private ListBox listBox1;
         private Button btnAddAttendee;
         private Button btnCancelAddAttendee;
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem allUsersToolStripMenuItem;
         private ToolStripMenuItem addUserToolStripMenuItem;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn UserName;
+        private DataGridViewTextBoxColumn UserEmail;
+        private DataGridViewTextBoxColumn UserPhone;
     }
 }

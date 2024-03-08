@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
             label1 = new Label();
             addBtn = new Button();
             editBtn = new Button();
@@ -52,19 +51,14 @@
             label3 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            dataGridView1 = new DataGridView();
+            UserName = new DataGridViewTextBoxColumn();
+            UserRole = new DataGridViewTextBoxColumn();
+            DoB = new DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 24;
-            listBox1.Location = new Point(28, 69);
-            listBox1.Margin = new Padding(3, 2, 3, 2);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(549, 316);
-            listBox1.TabIndex = 0;
             // 
             // label1
             // 
@@ -128,14 +122,16 @@
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(158, 34);
+            loginToolStripMenuItem.Size = new Size(270, 34);
             loginToolStripMenuItem.Text = "Login";
+            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(158, 34);
+            exitToolStripMenuItem.Size = new Size(270, 34);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // eventsToolStripMenuItem
             // 
@@ -278,18 +274,49 @@
             label2.TabIndex = 0;
             label2.Text = "Name:";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { UserName, UserRole, DoB });
+            dataGridView1.Location = new Point(28, 69);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(536, 280);
+            dataGridView1.TabIndex = 7;
+            // 
+            // UserName
+            // 
+            UserName.HeaderText = "User Name";
+            UserName.MinimumWidth = 8;
+            UserName.Name = "UserName";
+            UserName.Width = 150;
+            // 
+            // UserRole
+            // 
+            UserRole.HeaderText = "User Role";
+            UserRole.MinimumWidth = 8;
+            UserRole.Name = "UserRole";
+            UserRole.Width = 150;
+            // 
+            // DoB
+            // 
+            DoB.HeaderText = "Date of Birth";
+            DoB.MinimumWidth = 8;
+            DoB.Name = "DoB";
+            DoB.Width = 170;
+            // 
             // AllUsers
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 565);
+            Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             Controls.Add(deleteBtn);
             Controls.Add(editBtn);
             Controls.Add(addBtn);
             Controls.Add(label1);
-            Controls.Add(listBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "AllUsers";
             Text = "All Users";
@@ -297,13 +324,12 @@
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private ListBox listBox1;
         private Label label1;
         private Button addBtn;
         private Button editBtn;
@@ -327,5 +353,9 @@
         private RadioButton adminRadioBtn;
         private Button btnCancelSearchEvent;
         private Button btnSearchEvent;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn UserName;
+        private DataGridViewTextBoxColumn UserRole;
+        private DataGridViewTextBoxColumn DoB;
     }
 }
