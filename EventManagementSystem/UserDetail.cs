@@ -52,7 +52,7 @@ namespace EventManagementSystem
             Hide();
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+        private void saveBtn_Click(object sender, EventArgs e)
         {
             AllUsers allUsers = new AllUsers();
             allUsers.Show();
@@ -65,6 +65,11 @@ namespace EventManagementSystem
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
