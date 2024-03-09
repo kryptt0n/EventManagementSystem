@@ -55,7 +55,7 @@
             attendeeToolStripMenuItem = new ToolStripMenuItem();
             myEventsToolStripMenuItem = new ToolStripMenuItem();
             registForEventsToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
+            btnRegister = new Button();
             dataGridView1 = new DataGridView();
             EventName = new DataGridViewTextBoxColumn();
             EventDate = new DataGridViewTextBoxColumn();
@@ -107,7 +107,7 @@
             txtEventName.BorderStyle = BorderStyle.FixedSingle;
             txtEventName.Location = new Point(154, 43);
             txtEventName.Name = "txtEventName";
-            txtEventName.Size = new Size(220, 29);
+            txtEventName.Size = new Size(220, 36);
             txtEventName.TabIndex = 8;
             // 
             // btnSearchEvent
@@ -125,7 +125,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(35, 46);
             label1.Name = "label1";
-            label1.Size = new Size(55, 22);
+            label1.Size = new Size(75, 29);
             label1.TabIndex = 6;
             label1.Text = "Name";
             // 
@@ -135,7 +135,7 @@
             txtEventCapacity.BorderStyle = BorderStyle.FixedSingle;
             txtEventCapacity.Location = new Point(630, 87);
             txtEventCapacity.Name = "txtEventCapacity";
-            txtEventCapacity.Size = new Size(220, 29);
+            txtEventCapacity.Size = new Size(220, 36);
             txtEventCapacity.TabIndex = 13;
             // 
             // label2
@@ -143,7 +143,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(511, 45);
             label2.Name = "label2";
-            label2.Size = new Size(104, 22);
+            label2.Size = new Size(140, 29);
             label2.TabIndex = 7;
             label2.Text = "Date / Time";
             // 
@@ -152,7 +152,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(511, 89);
             label4.Name = "label4";
-            label4.Size = new Size(76, 22);
+            label4.Size = new Size(102, 29);
             label4.TabIndex = 12;
             label4.Text = "Capacity";
             // 
@@ -160,7 +160,7 @@
             // 
             dateTimePickerEvent.Location = new Point(630, 40);
             dateTimePickerEvent.Name = "dateTimePickerEvent";
-            dateTimePickerEvent.Size = new Size(220, 29);
+            dateTimePickerEvent.Size = new Size(220, 36);
             dateTimePickerEvent.TabIndex = 9;
             // 
             // comboBoxEventLocation
@@ -169,7 +169,7 @@
             comboBoxEventLocation.Items.AddRange(new object[] { "Toronto", "Etobicoke", "Scarborough", "North York", "East York", "York" });
             comboBoxEventLocation.Location = new Point(154, 90);
             comboBoxEventLocation.Name = "comboBoxEventLocation";
-            comboBoxEventLocation.Size = new Size(220, 30);
+            comboBoxEventLocation.Size = new Size(220, 37);
             comboBoxEventLocation.TabIndex = 11;
             // 
             // label3
@@ -177,7 +177,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(35, 93);
             label3.Name = "label3";
-            label3.Size = new Size(76, 22);
+            label3.Size = new Size(101, 29);
             label3.TabIndex = 10;
             label3.Text = "Location";
             // 
@@ -219,7 +219,7 @@
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
             menuStrip2.Padding = new Padding(5, 2, 0, 2);
-            menuStrip2.Size = new Size(1178, 30);
+            menuStrip2.Size = new Size(1178, 37);
             menuStrip2.TabIndex = 21;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -227,20 +227,20 @@
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3 });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(56, 28);
+            toolStripMenuItem1.Size = new Size(69, 33);
             toolStripMenuItem1.Text = "File";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(158, 34);
+            toolStripMenuItem2.Size = new Size(201, 44);
             toolStripMenuItem2.Text = "Login";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(158, 34);
+            toolStripMenuItem3.Size = new Size(201, 44);
             toolStripMenuItem3.Text = "Exit";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
@@ -248,20 +248,20 @@
             // 
             toolStripMenuItem4.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem5, toolStripMenuItem6 });
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(81, 28);
+            toolStripMenuItem4.Size = new Size(103, 33);
             toolStripMenuItem4.Text = "Events";
             // 
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(199, 34);
+            toolStripMenuItem5.Size = new Size(252, 44);
             toolStripMenuItem5.Text = "All Events";
             toolStripMenuItem5.Click += viewEventsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem6
             // 
             toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(199, 34);
+            toolStripMenuItem6.Size = new Size(252, 44);
             toolStripMenuItem6.Text = "Add Event";
             toolStripMenuItem6.Click += addEventToolStripMenuItem_Click;
             // 
@@ -269,20 +269,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(72, 28);
+            usersToolStripMenuItem.Size = new Size(93, 33);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(190, 34);
+            allUsersToolStripMenuItem.Size = new Size(242, 44);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(190, 34);
+            addUserToolStripMenuItem.Size = new Size(242, 44);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -290,32 +290,32 @@
             // 
             attendeeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { myEventsToolStripMenuItem, registForEventsToolStripMenuItem });
             attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
-            attendeeToolStripMenuItem.Size = new Size(106, 28);
+            attendeeToolStripMenuItem.Size = new Size(128, 33);
             attendeeToolStripMenuItem.Text = "Attendee";
             // 
             // myEventsToolStripMenuItem
             // 
             myEventsToolStripMenuItem.Name = "myEventsToolStripMenuItem";
-            myEventsToolStripMenuItem.Size = new Size(253, 34);
+            myEventsToolStripMenuItem.Size = new Size(326, 44);
             myEventsToolStripMenuItem.Text = "My Events";
             myEventsToolStripMenuItem.Click += myEventsToolStripMenuItem_Click;
             // 
             // registForEventsToolStripMenuItem
             // 
             registForEventsToolStripMenuItem.Name = "registForEventsToolStripMenuItem";
-            registForEventsToolStripMenuItem.Size = new Size(253, 34);
+            registForEventsToolStripMenuItem.Size = new Size(326, 44);
             registForEventsToolStripMenuItem.Text = "Regist for Events";
             registForEventsToolStripMenuItem.Click += registForEventsToolStripMenuItem_Click;
             // 
-            // button1
+            // btnRegister
             // 
-            button1.Location = new Point(1015, 305);
-            button1.Name = "button1";
-            button1.Size = new Size(102, 31);
-            button1.TabIndex = 22;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnRegister.Location = new Point(1015, 305);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(102, 31);
+            btnRegister.TabIndex = 22;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += button1_Click;
             // 
             // dataGridView1
             // 
@@ -393,7 +393,7 @@
             label6.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             label6.Location = new Point(41, 66);
             label6.Name = "label6";
-            label6.Size = new Size(70, 25);
+            label6.Size = new Size(94, 31);
             label6.TabIndex = 25;
             label6.Text = "Events";
             // 
@@ -417,14 +417,14 @@
             // 
             // AllEvents
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(13F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 613);
             Controls.Add(btnCancelRegister);
             Controls.Add(btnDelete);
             Controls.Add(label6);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(btnRegister);
             Controls.Add(menuStrip2);
             Controls.Add(btnAddEvent);
             Controls.Add(btnEventAttendees);
@@ -467,7 +467,7 @@
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem allUsersToolStripMenuItem;
         private ToolStripMenuItem addUserToolStripMenuItem;
-        private Button button1;
+        private Button btnRegister;
         private ToolStripMenuItem attendeeToolStripMenuItem;
         private ToolStripMenuItem myEventsToolStripMenuItem;
         private DataGridView dataGridView1;

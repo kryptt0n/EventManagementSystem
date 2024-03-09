@@ -53,7 +53,7 @@
             btnCancel = new Button();
             btnSave = new Button();
             label7 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxManager = new ComboBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(825, 30);
+            menuStrip1.Size = new Size(825, 37);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -73,20 +73,20 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(56, 28);
+            fileToolStripMenuItem.Size = new Size(69, 33);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(158, 34);
+            loginToolStripMenuItem.Size = new Size(201, 44);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(158, 34);
+            exitToolStripMenuItem.Size = new Size(201, 44);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -94,20 +94,20 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(81, 28);
+            eventsToolStripMenuItem.Size = new Size(103, 33);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(199, 34);
+            viewEventsToolStripMenuItem.Size = new Size(252, 44);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(199, 34);
+            addEventToolStripMenuItem.Size = new Size(252, 44);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -115,20 +115,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(72, 28);
+            usersToolStripMenuItem.Size = new Size(93, 33);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(190, 34);
+            allUsersToolStripMenuItem.Size = new Size(242, 44);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(190, 34);
+            addUserToolStripMenuItem.Size = new Size(242, 44);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -137,7 +137,7 @@
             txtEventName.BorderStyle = BorderStyle.FixedSingle;
             txtEventName.Location = new Point(155, 77);
             txtEventName.Name = "txtEventName";
-            txtEventName.Size = new Size(221, 29);
+            txtEventName.Size = new Size(221, 36);
             txtEventName.TabIndex = 6;
             // 
             // label1
@@ -145,7 +145,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(26, 80);
             label1.Name = "label1";
-            label1.Size = new Size(105, 22);
+            label1.Size = new Size(142, 29);
             label1.TabIndex = 5;
             label1.Text = "Event Name";
             // 
@@ -163,7 +163,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(34, 207);
             label6.Name = "label6";
-            label6.Size = new Size(97, 22);
+            label6.Size = new Size(130, 29);
             label6.TabIndex = 25;
             label6.Text = "Description";
             // 
@@ -172,7 +172,7 @@
             txtEventOragnizer.BorderStyle = BorderStyle.FixedSingle;
             txtEventOragnizer.Location = new Point(558, 163);
             txtEventOragnizer.Name = "txtEventOragnizer";
-            txtEventOragnizer.Size = new Size(221, 29);
+            txtEventOragnizer.Size = new Size(221, 36);
             txtEventOragnizer.TabIndex = 24;
             // 
             // txtEventCapacity
@@ -180,7 +180,7 @@
             txtEventCapacity.BorderStyle = BorderStyle.FixedSingle;
             txtEventCapacity.Location = new Point(558, 123);
             txtEventCapacity.Name = "txtEventCapacity";
-            txtEventCapacity.Size = new Size(221, 29);
+            txtEventCapacity.Size = new Size(221, 36);
             txtEventCapacity.TabIndex = 23;
             // 
             // label5
@@ -188,7 +188,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(443, 166);
             label5.Name = "label5";
-            label5.Size = new Size(85, 22);
+            label5.Size = new Size(116, 29);
             label5.TabIndex = 22;
             label5.Text = "Oragnizer";
             // 
@@ -197,7 +197,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(452, 123);
             label4.Name = "label4";
-            label4.Size = new Size(76, 22);
+            label4.Size = new Size(102, 29);
             label4.TabIndex = 21;
             label4.Text = "Capacity";
             // 
@@ -207,7 +207,7 @@
             comboBoxEventLocation.Items.AddRange(new object[] { "Toronto", "Etobicoke", "Scarborough", "North York", "East York", "York" });
             comboBoxEventLocation.Location = new Point(155, 160);
             comboBoxEventLocation.Name = "comboBoxEventLocation";
-            comboBoxEventLocation.Size = new Size(221, 30);
+            comboBoxEventLocation.Size = new Size(221, 37);
             comboBoxEventLocation.TabIndex = 20;
             // 
             // label3
@@ -215,7 +215,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(55, 164);
             label3.Name = "label3";
-            label3.Size = new Size(76, 22);
+            label3.Size = new Size(101, 29);
             label3.TabIndex = 19;
             label3.Text = "Location";
             // 
@@ -224,7 +224,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(27, 123);
             label2.Name = "label2";
-            label2.Size = new Size(104, 22);
+            label2.Size = new Size(140, 29);
             label2.TabIndex = 18;
             label2.Text = "Date / Time";
             // 
@@ -232,7 +232,7 @@
             // 
             dateTimePickerEvent.Location = new Point(155, 119);
             dateTimePickerEvent.Name = "dateTimePickerEvent";
-            dateTimePickerEvent.Size = new Size(221, 29);
+            dateTimePickerEvent.Size = new Size(221, 36);
             dateTimePickerEvent.TabIndex = 17;
             // 
             // btnCancel
@@ -260,25 +260,25 @@
             label7.AutoSize = true;
             label7.Location = new Point(451, 80);
             label7.Name = "label7";
-            label7.Size = new Size(77, 22);
+            label7.Size = new Size(106, 29);
             label7.TabIndex = 27;
             label7.Text = "Manager";
             label7.Click += label7_Click;
             // 
-            // comboBox1
+            // comboBoxManager
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(558, 76);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(221, 30);
-            comboBox1.TabIndex = 28;
+            comboBoxManager.FormattingEnabled = true;
+            comboBoxManager.Location = new Point(558, 76);
+            comboBoxManager.Name = "comboBoxManager";
+            comboBoxManager.Size = new Size(221, 37);
+            comboBoxManager.TabIndex = 28;
             // 
             // EventDetail
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(13F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(825, 474);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxManager);
             Controls.Add(label7);
             Controls.Add(richTextBoxEventDesc);
             Controls.Add(label6);
@@ -331,6 +331,6 @@
         private ToolStripMenuItem allUsersToolStripMenuItem;
         private ToolStripMenuItem addUserToolStripMenuItem;
         private Label label7;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxManager;
     }
 }
