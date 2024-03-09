@@ -158,7 +158,7 @@
             createBtn.Name = "createBtn";
             createBtn.Size = new Size(127, 34);
             createBtn.TabIndex = 7;
-            createBtn.Text = "Create";
+            createBtn.Text = "Save";
             createBtn.UseVisualStyleBackColor = true;
             createBtn.Click += createBtn_Click;
             // 
@@ -287,7 +287,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 504);
+            ClientSize = new Size(575, 514);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label6);
@@ -303,7 +303,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserDetail";
-            Text = "New user";
+            Text = "User Detail";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             menuStrip1.ResumeLayout(false);

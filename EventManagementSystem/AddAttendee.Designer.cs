@@ -61,7 +61,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(925, 32);
+            menuStrip1.Size = new Size(923, 32);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -75,14 +75,14 @@
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(270, 34);
+            loginToolStripMenuItem.Size = new Size(158, 34);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(270, 34);
+            exitToolStripMenuItem.Size = new Size(158, 34);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -96,14 +96,14 @@
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(270, 34);
+            viewEventsToolStripMenuItem.Size = new Size(199, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(270, 34);
+            addEventToolStripMenuItem.Size = new Size(199, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             // 
             // usersToolStripMenuItem
@@ -116,14 +116,14 @@
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(270, 34);
+            allUsersToolStripMenuItem.Size = new Size(190, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(270, 34);
+            addUserToolStripMenuItem.Size = new Size(190, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -141,16 +141,16 @@
             groupBox1.Controls.Add(txtUserName);
             groupBox1.Controls.Add(btnSearchUser);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(51, 75);
+            groupBox1.Location = new Point(51, 65);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(824, 148);
+            groupBox1.Size = new Size(824, 179);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Text = "Search Attendee";
             // 
             // btnCancelSearchUser
             // 
-            btnCancelSearchUser.Location = new Point(175, 90);
+            btnCancelSearchUser.Location = new Point(182, 114);
             btnCancelSearchUser.Name = "btnCancelSearchUser";
             btnCancelSearchUser.Size = new Size(112, 34);
             btnCancelSearchUser.TabIndex = 15;
@@ -161,14 +161,14 @@
             // 
             txtUserName.BackColor = SystemColors.Window;
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(151, 29);
+            txtUserName.Location = new Point(168, 49);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(242, 30);
             txtUserName.TabIndex = 8;
             // 
             // btnSearchUser
             // 
-            btnSearchUser.Location = new Point(30, 90);
+            btnSearchUser.Location = new Point(37, 114);
             btnSearchUser.Name = "btnSearchUser";
             btnSearchUser.Size = new Size(112, 34);
             btnSearchUser.TabIndex = 14;
@@ -178,7 +178,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 32);
+            label2.Location = new Point(37, 52);
             label2.Name = "label2";
             label2.Size = new Size(105, 24);
             label2.TabIndex = 6;
@@ -186,7 +186,7 @@
             // 
             // btnAddAttendee
             // 
-            btnAddAttendee.Location = new Point(71, 512);
+            btnAddAttendee.Location = new Point(88, 552);
             btnAddAttendee.Name = "btnAddAttendee";
             btnAddAttendee.Size = new Size(112, 34);
             btnAddAttendee.TabIndex = 20;
@@ -196,7 +196,7 @@
             // 
             // btnCancelAddAttendee
             // 
-            btnCancelAddAttendee.Location = new Point(226, 512);
+            btnCancelAddAttendee.Location = new Point(243, 552);
             btnCancelAddAttendee.Name = "btnCancelAddAttendee";
             btnCancelAddAttendee.Size = new Size(112, 34);
             btnCancelAddAttendee.TabIndex = 21;
@@ -211,7 +211,7 @@
             dataGridView1.Location = new Point(51, 268);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(824, 194);
+            dataGridView1.Size = new Size(824, 260);
             dataGridView1.TabIndex = 22;
             // 
             // UserName
@@ -239,7 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 619);
+            ClientSize = new Size(923, 619);
             Controls.Add(dataGridView1);
             Controls.Add(btnCancelAddAttendee);
             Controls.Add(btnAddAttendee);

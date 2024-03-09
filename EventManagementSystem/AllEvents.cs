@@ -69,7 +69,7 @@ namespace EventManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -100,6 +100,11 @@ namespace EventManagementSystem
             AllEvents regist = new AllEvents();
             regist.Show();
             this.Close();
+        }
+
+        private void btnSearchEvent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
