@@ -88,5 +88,10 @@ namespace EventManagementSystem
         {
 
         }
+
+        private void attendeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

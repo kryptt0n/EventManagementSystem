@@ -40,9 +40,9 @@
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(77, 340);
+            btnRegister.Location = new Point(59, 247);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(112, 34);
+            btnRegister.Size = new Size(102, 31);
             btnRegister.TabIndex = 0;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = true;
@@ -50,9 +50,9 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(347, 340);
+            btnCancel.Location = new Point(219, 247);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(112, 34);
+            btnCancel.Size = new Size(102, 31);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -61,56 +61,59 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(84, 53);
+            label1.Location = new Point(76, 49);
             label1.Name = "label1";
-            label1.Size = new Size(105, 24);
+            label1.Size = new Size(96, 22);
             label1.TabIndex = 2;
             label1.Text = "User Name";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(84, 113);
+            label2.Location = new Point(45, 105);
             label2.Name = "label2";
-            label2.Size = new Size(141, 24);
+            label2.Size = new Size(127, 22);
             label2.TabIndex = 3;
             label2.Text = "Phone Number";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(84, 185);
+            label3.Location = new Point(120, 170);
             label3.Name = "label3";
-            label3.Size = new Size(57, 24);
+            label3.Size = new Size(52, 22);
             label3.TabIndex = 4;
             label3.Text = "Email";
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(309, 53);
+            txtUserName.BorderStyle = BorderStyle.FixedSingle;
+            txtUserName.Location = new Point(219, 46);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(150, 30);
+            txtUserName.Size = new Size(137, 29);
             txtUserName.TabIndex = 5;
             // 
             // txtPhoneNumber
             // 
-            txtPhoneNumber.Location = new Point(309, 107);
+            txtPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
+            txtPhoneNumber.Location = new Point(219, 102);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(150, 30);
+            txtPhoneNumber.Size = new Size(137, 29);
             txtPhoneNumber.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(309, 185);
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.Location = new Point(219, 167);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(150, 30);
+            txtEmail.Size = new Size(137, 29);
             txtEmail.TabIndex = 7;
             // 
             // AttendeeRegist
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 450);
+            ClientSize = new Size(415, 350);
             Controls.Add(txtEmail);
             Controls.Add(txtPhoneNumber);
             Controls.Add(txtUserName);
@@ -119,6 +122,7 @@
             Controls.Add(label1);
             Controls.Add(btnCancel);
             Controls.Add(btnRegister);
+            Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "AttendeeRegist";
             Text = "Attendee Regist";
             ResumeLayout(false);

@@ -106,5 +106,10 @@ namespace EventManagementSystem
         {
 
         }
+
+        private void btnCancelSearchEvent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

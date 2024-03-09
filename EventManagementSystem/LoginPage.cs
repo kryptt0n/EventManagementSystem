@@ -50,7 +50,9 @@ namespace EventManagementSystem
                     Hide();
                 }
             }*/
-            
+            AllEvents allEvents = new AllEvents();
+            allEvents.Show();
+            Hide();
         }
     }
 }

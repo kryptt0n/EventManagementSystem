@@ -55,6 +55,8 @@
             label6 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            label5 = new Label();
+            textBox3 = new TextBox();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -62,36 +64,40 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(82, 64);
+            label1.Font = new Font("Tahoma", 9F);
+            label1.Location = new Point(91, 62);
             label1.Name = "label1";
-            label1.Size = new Size(66, 24);
+            label1.Size = new Size(55, 22);
             label1.TabIndex = 0;
-            label1.Text = "Name:";
+            label1.Text = "Name";
             // 
             // txtName
             // 
-            txtName.Location = new Point(180, 64);
+            txtName.BorderStyle = BorderStyle.FixedSingle;
+            txtName.Font = new Font("Tahoma", 9F);
+            txtName.Location = new Point(180, 62);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(339, 30);
+            txtName.Size = new Size(308, 29);
             txtName.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(97, 126);
+            label2.Font = new Font("Tahoma", 9F);
+            label2.Location = new Point(101, 158);
             label2.Name = "label2";
-            label2.Size = new Size(52, 24);
+            label2.Size = new Size(44, 22);
             label2.TabIndex = 2;
-            label2.Text = "Role:";
+            label2.Text = "Role";
             // 
             // adminRadioBtn
             // 
             adminRadioBtn.AutoSize = true;
-            adminRadioBtn.Location = new Point(5, 10);
+            adminRadioBtn.Location = new Point(5, 9);
             adminRadioBtn.Margin = new Padding(3, 2, 3, 2);
             adminRadioBtn.Name = "adminRadioBtn";
-            adminRadioBtn.Size = new Size(93, 28);
+            adminRadioBtn.Size = new Size(85, 26);
             adminRadioBtn.TabIndex = 3;
             adminRadioBtn.TabStop = true;
             adminRadioBtn.Text = "Admin";
@@ -102,21 +108,22 @@
             groupBox1.Controls.Add(attendeeRadioBtn);
             groupBox1.Controls.Add(managerRadioBtn);
             groupBox1.Controls.Add(adminRadioBtn);
-            groupBox1.Location = new Point(180, 112);
+            groupBox1.Font = new Font("Tahoma", 9F);
+            groupBox1.Location = new Point(180, 158);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(281, 110);
+            groupBox1.Size = new Size(255, 113);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
             // attendeeRadioBtn
             // 
             attendeeRadioBtn.AutoSize = true;
-            attendeeRadioBtn.Location = new Point(5, 74);
+            attendeeRadioBtn.Location = new Point(5, 68);
             attendeeRadioBtn.Margin = new Padding(3, 2, 3, 2);
             attendeeRadioBtn.Name = "attendeeRadioBtn";
-            attendeeRadioBtn.Size = new Size(115, 28);
+            attendeeRadioBtn.Size = new Size(105, 26);
             attendeeRadioBtn.TabIndex = 5;
             attendeeRadioBtn.TabStop = true;
             attendeeRadioBtn.Text = "Attendee";
@@ -125,10 +132,10 @@
             // managerRadioBtn
             // 
             managerRadioBtn.AutoSize = true;
-            managerRadioBtn.Location = new Point(5, 42);
+            managerRadioBtn.Location = new Point(5, 38);
             managerRadioBtn.Margin = new Padding(3, 2, 3, 2);
             managerRadioBtn.Name = "managerRadioBtn";
-            managerRadioBtn.Size = new Size(113, 28);
+            managerRadioBtn.Size = new Size(102, 26);
             managerRadioBtn.TabIndex = 4;
             managerRadioBtn.TabStop = true;
             managerRadioBtn.Text = "Manager";
@@ -137,26 +144,29 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 245);
+            label3.Font = new Font("Tahoma", 9F);
+            label3.Location = new Point(40, 280);
             label3.Name = "label3";
-            label3.Size = new Size(123, 24);
+            label3.Size = new Size(111, 22);
             label3.TabIndex = 5;
-            label3.Text = "Date of Birth:";
+            label3.Text = "Date of Birth";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(180, 242);
+            dateTimePicker1.Font = new Font("Tahoma", 9F);
+            dateTimePicker1.Location = new Point(180, 275);
             dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(339, 30);
+            dateTimePicker1.Size = new Size(309, 29);
             dateTimePicker1.TabIndex = 6;
             // 
             // createBtn
             // 
-            createBtn.Location = new Point(109, 423);
+            createBtn.Font = new Font("Tahoma", 9F);
+            createBtn.Location = new Point(101, 446);
             createBtn.Margin = new Padding(3, 2, 3, 2);
             createBtn.Name = "createBtn";
-            createBtn.Size = new Size(127, 34);
+            createBtn.Size = new Size(115, 31);
             createBtn.TabIndex = 7;
             createBtn.Text = "Save";
             createBtn.UseVisualStyleBackColor = true;
@@ -164,10 +174,11 @@
             // 
             // cancelBtn
             // 
-            cancelBtn.Location = new Point(334, 423);
+            cancelBtn.Font = new Font("Tahoma", 9F);
+            cancelBtn.Location = new Point(320, 446);
             cancelBtn.Margin = new Padding(3, 2, 3, 2);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(127, 34);
+            cancelBtn.Size = new Size(115, 31);
             cancelBtn.TabIndex = 8;
             cancelBtn.Text = "Cancel";
             cancelBtn.UseVisualStyleBackColor = true;
@@ -175,11 +186,13 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.Font = new Font("Tahoma", 9F);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(575, 32);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(547, 30);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -187,39 +200,39 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(56, 28);
+            fileToolStripMenuItem.Size = new Size(52, 26);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(158, 34);
+            loginToolStripMenuItem.Size = new Size(153, 34);
             loginToolStripMenuItem.Text = "Login";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(158, 34);
+            exitToolStripMenuItem.Size = new Size(153, 34);
             exitToolStripMenuItem.Text = "Exit";
             // 
             // eventsToolStripMenuItem
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(81, 28);
+            eventsToolStripMenuItem.Size = new Size(78, 26);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(199, 34);
+            viewEventsToolStripMenuItem.Size = new Size(270, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(199, 34);
+            addEventToolStripMenuItem.Size = new Size(270, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -227,20 +240,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(72, 28);
+            usersToolStripMenuItem.Size = new Size(69, 26);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(190, 34);
+            allUsersToolStripMenuItem.Size = new Size(182, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(190, 34);
+            addUserToolStripMenuItem.Size = new Size(182, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -253,9 +266,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(81, 297);
+            label4.Font = new Font("Tahoma", 9F);
+            label4.Location = new Point(94, 327);
             label4.Name = "label4";
-            label4.Size = new Size(57, 24);
+            label4.Size = new Size(52, 22);
             label4.TabIndex = 10;
             label4.Text = "Email";
             label4.Click += label4_Click;
@@ -263,31 +277,57 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(75, 350);
+            label6.Font = new Font("Tahoma", 9F);
+            label6.Location = new Point(87, 373);
             label6.Name = "label6";
-            label6.Size = new Size(64, 24);
+            label6.Size = new Size(59, 22);
             label6.TabIndex = 12;
             label6.Text = "Phone";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(180, 297);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Tahoma", 9F);
+            textBox1.Location = new Point(180, 325);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(339, 30);
+            textBox1.Size = new Size(308, 29);
             textBox1.TabIndex = 13;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(180, 347);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Tahoma", 9F);
+            textBox2.Location = new Point(180, 371);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(339, 30);
+            textBox2.Size = new Size(308, 29);
             textBox2.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(65, 110);
+            label5.Name = "label5";
+            label5.Size = new Size(84, 22);
+            label5.TabIndex = 15;
+            label5.Text = "Password";
+            label5.Click += label5_Click;
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Location = new Point(180, 107);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(308, 29);
+            textBox3.TabIndex = 16;
             // 
             // UserDetail
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 514);
+            ClientSize = new Size(547, 530);
+            Controls.Add(textBox3);
+            Controls.Add(label5);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label6);
@@ -301,6 +341,7 @@
             Controls.Add(label2);
             Controls.Add(txtName);
             Controls.Add(label1);
+            Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserDetail";
             Text = "User Detail";
@@ -340,5 +381,7 @@
         private Label label6;
         private TextBox textBox1;
         private TextBox textBox2;
+        private Label label5;
+        private TextBox textBox3;
     }
 }
