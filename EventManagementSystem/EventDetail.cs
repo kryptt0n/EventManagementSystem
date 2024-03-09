@@ -45,7 +45,6 @@ namespace EventManagementSystem
         {
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
-            Hide();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +62,7 @@ namespace EventManagementSystem
         {
             EventDetail eventDetail = new EventDetail();
             eventDetail.Show();
+            Hide();
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)

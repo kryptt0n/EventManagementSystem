@@ -38,8 +38,8 @@ namespace EventManagementSystem
 
         private void btnEventAttendees_Click(object sender, EventArgs e)
         {
-            EventAttendees eventAttendees = new EventAttendees();
-            eventAttendees.Show();
+            EventAttendeesList list = new EventAttendeesList();
+            list.Show();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,7 +64,6 @@ namespace EventManagementSystem
         {
             UserDetail form = new UserDetail();
             form.Show();
-            Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

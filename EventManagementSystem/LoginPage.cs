@@ -19,7 +19,8 @@ namespace EventManagementSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            UserDetail userDetail = new UserDetail();
+            userDetail.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

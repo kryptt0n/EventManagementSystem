@@ -28,7 +28,6 @@ namespace EventManagementSystem
         {
             EventDetail eventDetail = new EventDetail();
             eventDetail.Show();
-            Hide();
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,16 +46,12 @@ namespace EventManagementSystem
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            AllUsers allUsers = new AllUsers();
-            allUsers.Show();
-            Hide();
+            this.Close();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            AllUsers allUsers = new AllUsers();
-            allUsers.Show();
-            Hide();
+            this.Close();
         }
 
         private void label4_Click(object sender, EventArgs e)

@@ -34,7 +34,7 @@
             txtUserName = new TextBox();
             txtPassword = new TextBox();
             btnLogin = new Button();
-            btnExit = new Button();
+            btnSignUp = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -69,7 +69,7 @@
             // txtUserName
             // 
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(734, 366);
+            txtUserName.Location = new Point(748, 366);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(157, 29);
             txtUserName.TabIndex = 2;
@@ -77,7 +77,7 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(734, 429);
+            txtPassword.Location = new Point(748, 429);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(157, 29);
             txtPassword.TabIndex = 3;
@@ -86,21 +86,21 @@
             // 
             btnLogin.Location = new Point(626, 494);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(102, 31);
+            btnLogin.Size = new Size(102, 34);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // btnExit
+            // btnSignUp
             // 
-            btnExit.Location = new Point(766, 494);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(102, 31);
-            btnExit.TabIndex = 5;
-            btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
+            btnSignUp.Location = new Point(766, 494);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(102, 34);
+            btnSignUp.TabIndex = 5;
+            btnSignUp.Text = "Sign Up";
+            btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += btnExit_Click;
             // 
             // label1
             // 
@@ -144,7 +144,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            Controls.Add(btnExit);
+            Controls.Add(btnSignUp);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
@@ -167,7 +167,7 @@
         private TextBox txtUserName;
         private TextBox txtPassword;
         private Button btnLogin;
-        private Button btnExit;
+        private Button btnSignUp;
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;

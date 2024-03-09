@@ -28,7 +28,6 @@ namespace EventManagementSystem
         {
             UserDetail form = new UserDetail();
             form.Show();
-            Hide();
         }
 
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +41,6 @@ namespace EventManagementSystem
         {
             EventDetail form = new EventDetail();
             form.Show();
-            Hide();
         }
 
         private void addBtn_Click(object sender, EventArgs e)

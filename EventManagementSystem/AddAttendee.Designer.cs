@@ -99,14 +99,14 @@
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(270, 34);
+            viewEventsToolStripMenuItem.Size = new Size(191, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(270, 34);
+            addEventToolStripMenuItem.Size = new Size(191, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             // 
             // usersToolStripMenuItem
@@ -155,7 +155,7 @@
             // 
             btnCancelSearchUser.Location = new Point(165, 104);
             btnCancelSearchUser.Name = "btnCancelSearchUser";
-            btnCancelSearchUser.Size = new Size(102, 31);
+            btnCancelSearchUser.Size = new Size(102, 35);
             btnCancelSearchUser.TabIndex = 15;
             btnCancelSearchUser.Text = "Clear";
             btnCancelSearchUser.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             // 
             btnSearchUser.Location = new Point(34, 104);
             btnSearchUser.Name = "btnSearchUser";
-            btnSearchUser.Size = new Size(102, 31);
+            btnSearchUser.Size = new Size(102, 35);
             btnSearchUser.TabIndex = 14;
             btnSearchUser.Text = "Search";
             btnSearchUser.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             // 
             btnAddAttendee.Location = new Point(80, 506);
             btnAddAttendee.Name = "btnAddAttendee";
-            btnAddAttendee.Size = new Size(102, 31);
+            btnAddAttendee.Size = new Size(102, 34);
             btnAddAttendee.TabIndex = 20;
             btnAddAttendee.Text = "Add";
             btnAddAttendee.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             // 
             btnCancelAddAttendee.Location = new Point(221, 506);
             btnCancelAddAttendee.Name = "btnCancelAddAttendee";
-            btnCancelAddAttendee.Size = new Size(102, 31);
+            btnCancelAddAttendee.Size = new Size(102, 34);
             btnCancelAddAttendee.TabIndex = 21;
             btnCancelAddAttendee.Text = "Cancel";
             btnCancelAddAttendee.UseVisualStyleBackColor = true;

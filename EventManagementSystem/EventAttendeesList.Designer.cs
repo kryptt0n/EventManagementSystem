@@ -57,8 +57,8 @@
             listBox2 = new ListBox();
             button1 = new Button();
             button2 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            btnSave = new Button();
+            btnCancel = new Button();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -72,7 +72,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(727, 32);
+            menuStrip1.Size = new Size(727, 30);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -80,7 +80,7 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(52, 28);
+            fileToolStripMenuItem.Size = new Size(52, 26);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
@@ -101,7 +101,7 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(78, 28);
+            eventsToolStripMenuItem.Size = new Size(78, 26);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
@@ -122,20 +122,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(69, 28);
+            usersToolStripMenuItem.Size = new Size(69, 26);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(270, 34);
+            allUsersToolStripMenuItem.Size = new Size(182, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(270, 34);
+            addUserToolStripMenuItem.Size = new Size(182, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -193,7 +193,7 @@
             // 
             btnCancelSearchUser.Location = new Point(149, 95);
             btnCancelSearchUser.Name = "btnCancelSearchUser";
-            btnCancelSearchUser.Size = new Size(93, 28);
+            btnCancelSearchUser.Size = new Size(93, 35);
             btnCancelSearchUser.TabIndex = 17;
             btnCancelSearchUser.Text = "Clear";
             btnCancelSearchUser.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             // 
             btnSearchUser.Location = new Point(30, 95);
             btnSearchUser.Name = "btnSearchUser";
-            btnSearchUser.Size = new Size(93, 28);
+            btnSearchUser.Size = new Size(93, 35);
             btnSearchUser.TabIndex = 16;
             btnSearchUser.Text = "Search";
             btnSearchUser.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             // 
             button3.Location = new Point(150, 98);
             button3.Name = "button3";
-            button3.Size = new Size(93, 28);
+            button3.Size = new Size(93, 35);
             button3.TabIndex = 21;
             button3.Text = "Clear";
             button3.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             // 
             button4.Location = new Point(31, 98);
             button4.Name = "button4";
-            button4.Size = new Size(93, 28);
+            button4.Size = new Size(93, 35);
             button4.TabIndex = 20;
             button4.Text = "Search";
             button4.UseVisualStyleBackColor = true;
@@ -312,33 +312,33 @@
             button2.Text = "<";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnSave
             // 
-            button5.Location = new Point(55, 640);
-            button5.Name = "button5";
-            button5.Size = new Size(102, 31);
-            button5.TabIndex = 25;
-            button5.Text = "Save";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            btnSave.Location = new Point(55, 640);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(102, 39);
+            btnSave.TabIndex = 25;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += button5_Click;
             // 
-            // button6
+            // btnCancel
             // 
-            button6.Location = new Point(200, 640);
-            button6.Name = "button6";
-            button6.Size = new Size(102, 31);
-            button6.TabIndex = 26;
-            button6.Text = "Cancel";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            btnCancel.Location = new Point(200, 640);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(102, 39);
+            btnCancel.TabIndex = 26;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += button6_Click;
             // 
             // EventAttendeesList
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(727, 691);
-            Controls.Add(button6);
-            Controls.Add(button5);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(groupBox1);
@@ -392,7 +392,7 @@
         private Button button4;
         private TextBox textBox2;
         private Label label4;
-        private Button button5;
-        private Button button6;
+        private Button btnSave;
+        private Button btnCancel;
     }
 }

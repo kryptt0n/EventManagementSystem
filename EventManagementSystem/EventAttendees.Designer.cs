@@ -61,7 +61,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(829, 37);
+            menuStrip1.Size = new Size(829, 30);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -69,20 +69,20 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(69, 33);
+            fileToolStripMenuItem.Size = new Size(52, 26);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(201, 44);
+            loginToolStripMenuItem.Size = new Size(153, 34);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(201, 44);
+            exitToolStripMenuItem.Size = new Size(153, 34);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -90,20 +90,20 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(103, 33);
+            eventsToolStripMenuItem.Size = new Size(78, 26);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(252, 44);
+            viewEventsToolStripMenuItem.Size = new Size(191, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(252, 44);
+            addEventToolStripMenuItem.Size = new Size(191, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -111,20 +111,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(93, 33);
+            usersToolStripMenuItem.Size = new Size(69, 26);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(242, 44);
+            allUsersToolStripMenuItem.Size = new Size(182, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(242, 44);
+            addUserToolStripMenuItem.Size = new Size(182, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -134,7 +134,7 @@
             txtEventName.Location = new Point(183, 58);
             txtEventName.Name = "txtEventName";
             txtEventName.ReadOnly = true;
-            txtEventName.Size = new Size(215, 36);
+            txtEventName.Size = new Size(215, 29);
             txtEventName.TabIndex = 8;
             // 
             // label1
@@ -142,7 +142,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 60);
             label1.Name = "label1";
-            label1.Size = new Size(142, 29);
+            label1.Size = new Size(105, 22);
             label1.TabIndex = 7;
             label1.Text = "Event Name";
             // 
@@ -152,7 +152,7 @@
             label2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             label2.Location = new Point(40, 110);
             label2.Name = "label2";
-            label2.Size = new Size(138, 31);
+            label2.Size = new Size(103, 25);
             label2.TabIndex = 9;
             label2.Text = "Attendees";
             // 
@@ -160,7 +160,7 @@
             // 
             btnDeleteAttendee.Location = new Point(205, 444);
             btnDeleteAttendee.Name = "btnDeleteAttendee";
-            btnDeleteAttendee.Size = new Size(102, 31);
+            btnDeleteAttendee.Size = new Size(102, 32);
             btnDeleteAttendee.TabIndex = 13;
             btnDeleteAttendee.Text = "Delete";
             btnDeleteAttendee.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
             // 
             btnAddAttendee.Location = new Point(55, 444);
             btnAddAttendee.Name = "btnAddAttendee";
-            btnAddAttendee.Size = new Size(102, 31);
+            btnAddAttendee.Size = new Size(102, 32);
             btnAddAttendee.TabIndex = 12;
             btnAddAttendee.Text = "Add";
             btnAddAttendee.UseVisualStyleBackColor = true;
@@ -209,9 +209,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(444, 60);
+            label3.Location = new Point(430, 60);
             label3.Name = "label3";
-            label3.Size = new Size(158, 29);
+            label3.Size = new Size(116, 22);
             label3.TabIndex = 15;
             label3.Text = "Remain Seats";
             // 
@@ -221,12 +221,12 @@
             txtRemainSeats.Location = new Point(572, 58);
             txtRemainSeats.Name = "txtRemainSeats";
             txtRemainSeats.ReadOnly = true;
-            txtRemainSeats.Size = new Size(215, 36);
+            txtRemainSeats.Size = new Size(215, 29);
             txtRemainSeats.TabIndex = 16;
             // 
             // EventAttendees
             // 
-            AutoScaleDimensions = new SizeF(13F, 29F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(829, 505);
             Controls.Add(txtRemainSeats);
