@@ -68,5 +68,19 @@ namespace EventManagementSystem
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
         }
+
+        private void myEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllEvents form = new AllEvents();
+            form.Show();
+            Hide();
+        }
+
+        private void registForEventsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllEvents form = new AllEvents();
+            form.Show();
+            Hide();
+        }
     }
 }
