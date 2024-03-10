@@ -47,14 +47,12 @@ namespace EventManagementSystem
         {
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
-            Hide();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
             UserDetail userDetail = new UserDetail();
             userDetail.Show();
-            Hide();
         }
 
         private void attendeesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +69,11 @@ namespace EventManagementSystem
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

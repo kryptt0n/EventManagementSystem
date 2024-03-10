@@ -187,7 +187,7 @@
             groupBox1.Size = new Size(285, 494);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Unregisted Users";
+            groupBox1.Text = "Unregistered Users";
             // 
             // btnCancelSearchUser
             // 
@@ -246,7 +246,7 @@
             groupBox2.Size = new Size(285, 494);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Registed Attendees";
+            groupBox2.Text = "Registered Attendees";
             // 
             // button3
             // 
