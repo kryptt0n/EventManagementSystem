@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem
 {
-    internal class Event
+    public class Event
     {
         // private attributes
-        private int EventId { get; set; }
-        private string EventName { get; set; }
-        private string EventDate { get; set; }
-        private int EventCapacity { get; set; }
-        private string EventLocation { get; set; }
-        private string ManagerUserName { get; set; }
-        private string EvnetDescription { get; set; }
-        private char EventValid { get; set; }
+        public int EventId { get; set; }
+        public string EventName { get; set; }
+        public string EventDate { get; set; }
+        public int EventCapacity { get; set; }
+        public string EventLocation { get; set; }
+        public string ManagerUserName { get; set; }
+        public string EvnetDescription { get; set; }
+        public char EventValid { get; set; }
 
-        private List<Attendee> attendeeList { get; set; }
+        public List<Attendee> attendeeList { get; set; }
 
 
     }
