@@ -107,6 +107,7 @@
             deleteBtn.TabIndex = 4;
             deleteBtn.Text = "Delete";
             deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // menuStrip1
             // 
@@ -234,6 +235,7 @@
             btnCancelSearchEvent.TabIndex = 17;
             btnCancelSearchEvent.Text = "Clear";
             btnCancelSearchEvent.UseVisualStyleBackColor = true;
+            btnCancelSearchEvent.Click += btnCancelSearchEvent_Click;
             // 
             // btnSearchEvent
             // 

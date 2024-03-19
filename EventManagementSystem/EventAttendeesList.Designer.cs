@@ -221,6 +221,7 @@
             btnCancelSearchUser.TabIndex = 17;
             btnCancelSearchUser.Text = "Clear";
             btnCancelSearchUser.UseVisualStyleBackColor = true;
+            btnCancelSearchUser.Click += btnCancelSearchUser_Click;
             // 
             // btnSearchUser
             // 
@@ -280,6 +281,7 @@
             button3.TabIndex = 21;
             button3.Text = "Clear";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

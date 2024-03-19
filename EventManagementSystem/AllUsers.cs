@@ -89,5 +89,15 @@ namespace EventManagementSystem
             form.Show();
             Hide();
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelSearchEvent_Click(object sender, EventArgs e)
+        {
+            txtSearchName.Clear();
+        }
     }
 }

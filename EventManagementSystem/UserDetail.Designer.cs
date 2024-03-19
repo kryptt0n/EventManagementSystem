@@ -33,7 +33,7 @@
             txtName = new TextBox();
             label2 = new Label();
             adminRadioBtn = new RadioButton();
-            groupBox1 = new GroupBox();
+            groupBoxRoles = new GroupBox();
             attendeeRadioBtn = new RadioButton();
             managerRadioBtn = new RadioButton();
             label3 = new Label();
@@ -61,8 +61,8 @@
             label5 = new Label();
             txtPassword = new TextBox();
             label7 = new Label();
-            comboBox1 = new ComboBox();
-            groupBox1.SuspendLayout();
+            comboBoxValid = new ComboBox();
+            groupBoxRoles.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,12 +86,13 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(308, 29);
             txtName.TabIndex = 1;
+            txtName.TextChanged += txtName_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 9F);
-            label2.Location = new Point(101, 158);
+            label2.Location = new Point(102, 158);
             label2.Name = "label2";
             label2.Size = new Size(44, 22);
             label2.TabIndex = 2;
@@ -100,7 +101,7 @@
             // adminRadioBtn
             // 
             adminRadioBtn.AutoSize = true;
-            adminRadioBtn.Location = new Point(5, 9);
+            adminRadioBtn.Location = new Point(6, 16);
             adminRadioBtn.Margin = new Padding(3, 2, 3, 2);
             adminRadioBtn.Name = "adminRadioBtn";
             adminRadioBtn.Size = new Size(85, 26);
@@ -109,24 +110,24 @@
             adminRadioBtn.Text = "Admin";
             adminRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBoxRoles
             // 
-            groupBox1.Controls.Add(attendeeRadioBtn);
-            groupBox1.Controls.Add(managerRadioBtn);
-            groupBox1.Controls.Add(adminRadioBtn);
-            groupBox1.Font = new Font("Tahoma", 9F);
-            groupBox1.Location = new Point(180, 158);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(255, 113);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
+            groupBoxRoles.Controls.Add(attendeeRadioBtn);
+            groupBoxRoles.Controls.Add(managerRadioBtn);
+            groupBoxRoles.Controls.Add(adminRadioBtn);
+            groupBoxRoles.Font = new Font("Tahoma", 9F);
+            groupBoxRoles.Location = new Point(180, 141);
+            groupBoxRoles.Margin = new Padding(3, 2, 3, 2);
+            groupBoxRoles.Name = "groupBoxRoles";
+            groupBoxRoles.Padding = new Padding(3, 2, 3, 2);
+            groupBoxRoles.Size = new Size(255, 113);
+            groupBoxRoles.TabIndex = 4;
+            groupBoxRoles.TabStop = false;
             // 
             // attendeeRadioBtn
             // 
             attendeeRadioBtn.AutoSize = true;
-            attendeeRadioBtn.Location = new Point(5, 68);
+            attendeeRadioBtn.Location = new Point(6, 75);
             attendeeRadioBtn.Margin = new Padding(3, 2, 3, 2);
             attendeeRadioBtn.Name = "attendeeRadioBtn";
             attendeeRadioBtn.Size = new Size(105, 26);
@@ -138,7 +139,7 @@
             // managerRadioBtn
             // 
             managerRadioBtn.AutoSize = true;
-            managerRadioBtn.Location = new Point(5, 38);
+            managerRadioBtn.Location = new Point(6, 45);
             managerRadioBtn.Margin = new Padding(3, 2, 3, 2);
             managerRadioBtn.Name = "managerRadioBtn";
             managerRadioBtn.Size = new Size(102, 26);
@@ -151,7 +152,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 9F);
-            label3.Location = new Point(40, 280);
+            label3.Location = new Point(35, 280);
             label3.Name = "label3";
             label3.Size = new Size(111, 22);
             label3.TabIndex = 5;
@@ -333,7 +334,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(65, 110);
+            label5.Location = new Point(62, 110);
             label5.Name = "label5";
             label5.Size = new Size(84, 22);
             label5.TabIndex = 15;
@@ -352,27 +353,29 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tahoma", 9F);
-            label7.Location = new Point(86, 422);
+            label7.Location = new Point(98, 422);
             label7.Name = "label7";
             label7.Size = new Size(48, 22);
             label7.TabIndex = 17;
             label7.Text = "Valid";
+            label7.Click += label7_Click;
             // 
-            // comboBox1
+            // comboBoxValid
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Y", "N" });
-            comboBox1.Location = new Point(180, 419);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 30);
-            comboBox1.TabIndex = 18;
+            comboBoxValid.FormattingEnabled = true;
+            comboBoxValid.Items.AddRange(new object[] { "Y", "N" });
+            comboBoxValid.Location = new Point(180, 419);
+            comboBoxValid.Name = "comboBoxValid";
+            comboBoxValid.Size = new Size(182, 30);
+            comboBoxValid.TabIndex = 18;
+            comboBoxValid.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // UserDetail
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(551, 531);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxValid);
             Controls.Add(label7);
             Controls.Add(txtPassword);
             Controls.Add(label5);
@@ -385,7 +388,7 @@
             Controls.Add(saveBtn);
             Controls.Add(dateTimePickerDoB);
             Controls.Add(label3);
-            Controls.Add(groupBox1);
+            Controls.Add(groupBoxRoles);
             Controls.Add(label2);
             Controls.Add(txtName);
             Controls.Add(label1);
@@ -393,8 +396,9 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserDetail";
             Text = "User Detail";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Load += UserDetail_Load;
+            groupBoxRoles.ResumeLayout(false);
+            groupBoxRoles.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -407,7 +411,7 @@
         private TextBox txtName;
         private Label label2;
         private RadioButton adminRadioBtn;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxRoles;
         private RadioButton attendeeRadioBtn;
         private RadioButton managerRadioBtn;
         private Label label3;
@@ -435,6 +439,6 @@
         private ToolStripMenuItem myEventsToolStripMenuItem;
         private ToolStripMenuItem registForEventsToolStripMenuItem;
         private Label label7;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxValid;
     }
 }

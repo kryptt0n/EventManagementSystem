@@ -82,5 +82,15 @@ namespace EventManagementSystem
             form.Show();
             Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtEventName.Clear();
+        }
+
+        private void btnCancelSearchUser_Click(object sender, EventArgs e)
+        {
+            txtUserName.Clear();
+        }
     }
 }
