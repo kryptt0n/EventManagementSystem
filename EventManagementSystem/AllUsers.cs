@@ -56,17 +56,34 @@ namespace EventManagementSystem
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            OpenUserDetailForm(ActionType.Add);
+            OpenUserDetailFormAdd(ActionType.Add);
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            OpenUserDetailForm(ActionType.Edit);
+            if (dataGridUsers.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridUsers.SelectedRows[0];
+                OpenUserDetailFormEdit(ActionType.Edit, row);
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void OpenUserDetailForm(ActionType action)
+        // method to open add user detail
+        private void OpenUserDetailFormAdd(ActionType action)
         {
             UserDetail userDetail = new UserDetail(action);
+            userDetail.Show();
+        }
+
+        // method to open edit user detail
+        private void OpenUserDetailFormEdit(ActionType action, DataGridViewRow row)
+        {
+            UserDetail userDetail = new UserDetail(action, row);
             userDetail.Show();
         }
 
@@ -124,7 +141,7 @@ namespace EventManagementSystem
                         // Get the selected row
                         DataGridViewRow selectedRow = dataGridUsers.SelectedRows[0];
                         string username = (string)selectedRow.Cells["UserName"].Value;
-                        string qStr = $"delete from User where Username = '{username}'";
+                        string qStr = $"DELETE FROM User WHERE Username = '{username}'";
                         MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                         mySqlCommand.ExecuteNonQuery();
                         MessageBox.Show(" User Deleted successfully!!!", "Delete User", MessageBoxButtons.OK);
@@ -149,7 +166,15 @@ namespace EventManagementSystem
         {
             try
             {
-                String qStr = "select * from User";
+                String qStr = "SELECT User.UserName, " +
+                                    "User.Password, " +
+                                    "Role.RoleName, " +
+                                    "User.DateOfBirth, " +
+                                    "User.Email, " +
+                                    "User.Phone, " +
+                                    "User.Valid " +
+                              "FROM User, Role " +
+                              "WHERE User.RoleId = Role.RoleId";
                 MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                 MySqlDataReader dataReader = mySqlCommand.ExecuteReader();
                 DataTable dataTable = new DataTable();
@@ -163,6 +188,7 @@ namespace EventManagementSystem
 
         }
 
+        // clear button action
         private void btnCancelSearchEvent_Click(object sender, EventArgs e)
         {
             txtSearchName.Clear();
@@ -185,7 +211,15 @@ namespace EventManagementSystem
         {
             try
             {
-                String qStr = "SELECT * FROM User WHERE 1 = 1 ";
+                String qStr = "SELECT User.UserName, " +
+                                    "User.Password, " +
+                                    "Role.RoleName, " +
+                                    "User.DateOfBirth, " +
+                                    "User.Email, " +
+                                    "User.Phone, " +
+                                    "User.Valid " +
+                              "FROM User, Role " +
+                              "WHERE User.RoleId = Role.RoleId "; ;
                 if (!string.IsNullOrEmpty(txtSearchName.Text))
                 {
                     // partial and case insensitive search

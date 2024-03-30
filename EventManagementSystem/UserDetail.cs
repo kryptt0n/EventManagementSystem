@@ -19,23 +19,69 @@ namespace EventManagementSystem
         private MySqlConnection connection = Program.db.GetConnection();
 
         private AllUsers.ActionType actionType;
+        
+        // constructor for add new user
         public UserDetail(ActionType action)
         {
             InitializeComponent();
             this.actionType = action;
 
+            // control the layout when load the page
             if(action == AllUsers.ActionType.Add)
             {
                 this.Text = "Add User";
+                // when add new user, the valid status locked to Y
+                comboBoxValid.SelectedIndex = 0;
+                comboBoxValid.Enabled = false;
+            }
 
-            }
-            if(action == AllUsers.ActionType.Edit)
-            {
-                this.Text = "Edit User";
-                txtName.ReadOnly = true;
-            }
         }
 
+        // constructor for edit user
+        public UserDetail(ActionType action, DataGridViewRow row)
+        {
+            InitializeComponent();
+            this.actionType = action;
+
+            // control the layout when load the page
+            if (action == AllUsers.ActionType.Edit)
+            {
+                // cannot change PK username
+                this.Text = "Edit User";
+
+                // get values from selected row and display in the fields
+                String username = row.Cells["UserName"].Value.ToString();
+                String password = row.Cells["Password"].Value.ToString();
+                String roleName = row.Cells["RoleName"].Value.ToString();
+                String dob = row.Cells["DateOfBirth"].Value.ToString();
+                String email = row.Cells["Email"].Value.ToString();
+                String phone = row.Cells["Phone"].Value.ToString();
+                String valid = row.Cells["Valid"].Value.ToString();
+
+                txtName.Text = username;
+                txtName.ReadOnly = true;
+
+                if (roleName == "Admin")
+                {
+                    adminRadioBtn.Checked = true;
+                }
+                if (roleName == "Manager")
+                {
+                    managerRadioBtn.Checked = true;
+                }
+                if (roleName == "Attendee")
+                {
+                    attendeeRadioBtn.Checked = true;
+                }
+
+                txtPassword.Text = password;
+                dateTimePickerDoB.Value = DateTime.Parse(dob);
+                txtEmail.Text = email;
+                txtPhone.Text = phone;
+                comboBoxValid.SelectedItem = valid;
+            }
+        }
+        // menubar actions
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AllEvents allEvents = new AllEvents();
@@ -68,13 +114,30 @@ namespace EventManagementSystem
             this.Close();
         }
 
+        // save button action
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            // validate 
             if (NameValidate() && PassWordValidate() && RoleValidate() && EmailValidate() && PhoneValidate() && ValidValidate())
             {
+                // get field contents
                 string userName = txtName.Text;
                 string password = txtPassword.Text;
-                int roleId = 1003;
+
+                int roleId = 0;
+                if (adminRadioBtn.Checked)
+                {
+                    roleId = 1001;
+                }
+                if(managerRadioBtn.Checked)
+                {
+                    roleId = 1002;
+                }
+                if (attendeeRadioBtn.Checked)
+                {
+                    roleId = 1003;
+                }
+
                 string dob = dateTimePickerDoB.Value.ToString("yyyy-MM-dd");
                 string email = txtEmail.Text;
                 string phone = txtPhone.Text;
@@ -82,25 +145,25 @@ namespace EventManagementSystem
 
                 if (actionType == ActionType.Add)
                 {
-                    /*try
-                    {*/
+                    try
+                    {
                         String qStr = $"INSERT INTO User VALUES ('{userName}','{password}',{roleId},'{dob}','{email}','{phone}','{valid}')";
                         MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                         mySqlCommand.ExecuteNonQuery();
 
                         MessageBox.Show(" New user added successfully!!!", "New User", MessageBoxButtons.OK);
-                    /*}
+                }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
-                    }*/
+                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                 }
+            }
 
                 if (actionType == ActionType.Edit)
                 {
                     try
                     {
-                        String qStr = $"UPDATE TABLE User SET Password = '{password}', RoleId = {roleId}, Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
+                        String qStr = $"UPDATE User SET Password = '{password}', RoleId = {roleId}, DateOfBirth = '{dob}', Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
                         MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                         mySqlCommand.ExecuteNonQuery();
 
@@ -108,12 +171,9 @@ namespace EventManagementSystem
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                     }
                 }
-
-
-                //MessageBox.Show("Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
 

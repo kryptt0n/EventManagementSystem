@@ -316,9 +316,12 @@
             // 
             // dataGridUsers
             // 
+            dataGridUsers.AllowUserToAddRows = false;
+            dataGridUsers.AllowUserToDeleteRows = false;
             dataGridUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridUsers.Location = new Point(25, 63);
             dataGridUsers.Name = "dataGridUsers";
+            dataGridUsers.ReadOnly = true;
             dataGridUsers.RowHeadersWidth = 62;
             dataGridUsers.Size = new Size(487, 257);
             dataGridUsers.TabIndex = 7;
