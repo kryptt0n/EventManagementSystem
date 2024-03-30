@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySqlConnector;
+using Mysqlx.Crud;
+using System.Collections.Generic;
+using MySqlConnection = MySqlConnector.MySqlConnection;
+using MySqlCommand = MySqlConnector.MySqlCommand;
+using MySqlDataReader = MySqlConnector.MySqlDataReader;
+using MySqlException = MySqlConnector.MySqlException;
+
 
 namespace EventManagementSystem
 {
     public partial class AllUsers : Form
     {
+        MySqlConnection connection = Program.db.GetConnection();
         public AllUsers()
         {
             InitializeComponent();
+            LoadAlldata();
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,7 +37,7 @@ namespace EventManagementSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserDetail form = new UserDetail();
+            UserDetail form = new UserDetail(AllUsers.ActionType.Add);
             form.Show();
         }
 
@@ -45,14 +56,24 @@ namespace EventManagementSystem
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail();
-            userDetail.Show();
+            OpenUserDetailForm(ActionType.Add);
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail();
+            OpenUserDetailForm(ActionType.Edit);
+        }
+
+        private void OpenUserDetailForm(ActionType action)
+        {
+            UserDetail userDetail = new UserDetail(action);
             userDetail.Show();
+        }
+
+        public enum ActionType
+        {
+            Add,
+            Edit
         }
 
         private void attendeesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,12 +113,111 @@ namespace EventManagementSystem
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            DialogResult res = MessageBox.Show(" Are you Sure?", "Exit Application", MessageBoxButtons.YesNo);
+
+            if (res == DialogResult.Yes)
+            {
+                if (dataGridUsers.SelectedRows.Count > 0)
+                {
+                    try
+                    {
+                        // Get the selected row
+                        DataGridViewRow selectedRow = dataGridUsers.SelectedRows[0];
+                        string username = (string)selectedRow.Cells["UserName"].Value;
+                        string qStr = $"delete from User where Username = '{username}'";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
+                        MessageBox.Show(" User Deleted successfully!!!", "Delete User", MessageBoxButtons.OK);
+
+                        // refresh the datagridview
+                        LoadAlldata();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($" Error in Database Operation : {ex.Message}", "Error", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        public void LoadAlldata()
+        {
+            try
+            {
+                String qStr = "select * from User";
+                MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                MySqlDataReader dataReader = mySqlCommand.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dataGridUsers.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+            }
 
         }
 
         private void btnCancelSearchEvent_Click(object sender, EventArgs e)
         {
             txtSearchName.Clear();
+            adminRadioBtn.Checked = false;
+            managerRadioBtn.Checked = false;
+            attendeeRadioBtn.Checked = false;
+        }
+
+        private void AllUsers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSearchEvent_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String qStr = "SELECT * FROM User WHERE 1 = 1 ";
+                if (!string.IsNullOrEmpty(txtSearchName.Text))
+                {
+                    // partial and case insensitive search
+                    qStr += $"AND LOWER(UserName) LIKE '%{txtSearchName.Text.ToLower()}%'";
+                }
+                if(adminRadioBtn.Checked == true)
+                {
+                    qStr += $"AND RoleId = 1001";
+                }
+                if (managerRadioBtn.Checked == true)
+                {
+                    qStr += $"AND RoleId = 1002";
+                }
+                if (attendeeRadioBtn.Checked == true)
+                {
+                    qStr += $"AND RoleId = 1003";
+                }
+
+                MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(mySqlDataReader);
+                dataGridUsers.DataSource = dataTable;
+            }
+            catch(MySqlException mse)
+            {
+                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(" Error in System", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,14 +9,31 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
+using static EventManagementSystem.AllUsers;
 
 namespace EventManagementSystem
 {
     public partial class UserDetail : Form
     {
-        public UserDetail()
+        private MySqlConnection connection = Program.db.GetConnection();
+
+        private AllUsers.ActionType actionType;
+        public UserDetail(ActionType action)
         {
             InitializeComponent();
+            this.actionType = action;
+
+            if(action == AllUsers.ActionType.Add)
+            {
+                this.Text = "Add User";
+
+            }
+            if(action == AllUsers.ActionType.Edit)
+            {
+                this.Text = "Edit User";
+                txtName.ReadOnly = true;
+            }
         }
 
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +58,7 @@ namespace EventManagementSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail();
+            UserDetail userDetail = new UserDetail(ActionType.Add);
             userDetail.Show();
             Hide();
         }
@@ -54,7 +72,48 @@ namespace EventManagementSystem
         {
             if (NameValidate() && PassWordValidate() && RoleValidate() && EmailValidate() && PhoneValidate() && ValidValidate())
             {
-                MessageBox.Show("Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
+                string userName = txtName.Text;
+                string password = txtPassword.Text;
+                int roleId = 1003;
+                string dob = dateTimePickerDoB.Value.ToString("yyyy-MM-dd");
+                string email = txtEmail.Text;
+                string phone = txtPhone.Text;
+                char valid = char.Parse(comboBoxValid.Text);
+
+                if (actionType == ActionType.Add)
+                {
+                    /*try
+                    {*/
+                        String qStr = $"INSERT INTO User VALUES ('{userName}','{password}',{roleId},'{dob}','{email}','{phone}','{valid}')";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
+
+                        MessageBox.Show(" New user added successfully!!!", "New User", MessageBoxButtons.OK);
+                    /*}
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }*/
+                }
+
+                if (actionType == ActionType.Edit)
+                {
+                    try
+                    {
+                        String qStr = $"UPDATE TABLE User SET Password = '{password}', RoleId = {roleId}, Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
+
+                        MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }
+                }
+
+
+                //MessageBox.Show("Saved!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
 

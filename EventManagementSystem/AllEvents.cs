@@ -62,7 +62,7 @@ namespace EventManagementSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserDetail form = new UserDetail();
+            UserDetail form = new UserDetail(AllUsers.ActionType.Add);
             form.Show();
         }
 

@@ -54,13 +54,10 @@
             label3 = new Label();
             txtSearchName = new TextBox();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
-            UserName = new DataGridViewTextBoxColumn();
-            UserRole = new DataGridViewTextBoxColumn();
-            DoB = new DataGridViewTextBoxColumn();
+            dataGridUsers = new DataGridView();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridUsers).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -117,7 +114,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(738, 30);
+            menuStrip1.Size = new Size(747, 30);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -246,6 +243,7 @@
             btnSearchEvent.TabIndex = 16;
             btnSearchEvent.Text = "Search";
             btnSearchEvent.UseVisualStyleBackColor = true;
+            btnSearchEvent.Click += btnSearchEvent_Click;
             // 
             // attendeeRadioBtn
             // 
@@ -316,43 +314,22 @@
             label2.TabIndex = 0;
             label2.Text = "Name:";
             // 
-            // dataGridView1
+            // dataGridUsers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { UserName, UserRole, DoB });
-            dataGridView1.Location = new Point(25, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(487, 257);
-            dataGridView1.TabIndex = 7;
-            // 
-            // UserName
-            // 
-            UserName.HeaderText = "User Name";
-            UserName.MinimumWidth = 8;
-            UserName.Name = "UserName";
-            UserName.Width = 150;
-            // 
-            // UserRole
-            // 
-            UserRole.HeaderText = "User Role";
-            UserRole.MinimumWidth = 8;
-            UserRole.Name = "UserRole";
-            UserRole.Width = 150;
-            // 
-            // DoB
-            // 
-            DoB.HeaderText = "Date of Birth";
-            DoB.MinimumWidth = 8;
-            DoB.Name = "DoB";
-            DoB.Width = 170;
+            dataGridUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridUsers.Location = new Point(25, 63);
+            dataGridUsers.Name = "dataGridUsers";
+            dataGridUsers.RowHeadersWidth = 62;
+            dataGridUsers.Size = new Size(487, 257);
+            dataGridUsers.TabIndex = 7;
+            dataGridUsers.CellContentClick += dataGridView1_CellContentClick;
             // 
             // AllUsers
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(738, 543);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(747, 543);
+            Controls.Add(dataGridUsers);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             Controls.Add(deleteBtn);
@@ -363,11 +340,12 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "AllUsers";
             Text = "All Users";
+            Load += AllUsers_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -396,10 +374,7 @@
         private RadioButton adminRadioBtn;
         private Button btnCancelSearchEvent;
         private Button btnSearchEvent;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn UserName;
-        private DataGridViewTextBoxColumn UserRole;
-        private DataGridViewTextBoxColumn DoB;
+        private DataGridView dataGridUsers;
         private ToolStripMenuItem attendeeToolStripMenuItem;
         private ToolStripMenuItem myEventsToolStripMenuItem;
         private ToolStripMenuItem registForEventsToolStripMenuItem;

@@ -19,7 +19,7 @@ namespace EventManagementSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail();
+            UserDetail userDetail = new UserDetail(AllUsers.ActionType.Add);
             userDetail.Show();
         }
 
