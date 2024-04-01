@@ -18,7 +18,7 @@ namespace EventManagementSystem
     {
         private MySqlConnection connection = Program.db.GetConnection();
 
-        private AllUsers.ActionType actionType;
+        private ActionType actionType;
         
         // constructor for add new user
         public UserDetail(ActionType action)
@@ -27,7 +27,7 @@ namespace EventManagementSystem
             this.actionType = action;
 
             // control the layout when load the page
-            if(action == AllUsers.ActionType.Add)
+            if(action == ActionType.Add)
             {
                 this.Text = "Add User";
                 // when add new user, the valid status locked to Y
@@ -41,10 +41,10 @@ namespace EventManagementSystem
         public UserDetail(ActionType action, DataGridViewRow row)
         {
             InitializeComponent();
-            this.actionType = action;
+            actionType = action;
 
             // control the layout when load the page
-            if (action == AllUsers.ActionType.Edit)
+            if (action == ActionType.Edit)
             {
                 // cannot change PK username
                 this.Text = "Edit User";

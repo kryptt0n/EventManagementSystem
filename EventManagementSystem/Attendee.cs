@@ -9,5 +9,10 @@ namespace EventManagementSystem
     public class Attendee : User
     {
         public List<Event> Events {  get; set; }
+
+        public Attendee()
+        {
+            Role = Role.Attendee;
+        }
     }
 }

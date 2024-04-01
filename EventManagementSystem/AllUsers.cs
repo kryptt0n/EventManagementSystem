@@ -37,7 +37,7 @@ namespace EventManagementSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserDetail form = new UserDetail(AllUsers.ActionType.Add);
+            UserDetail form = new UserDetail(ActionType.Add);
             form.Show();
         }
 
@@ -85,12 +85,6 @@ namespace EventManagementSystem
         {
             UserDetail userDetail = new UserDetail(action, row);
             userDetail.Show();
-        }
-
-        public enum ActionType
-        {
-            Add,
-            Edit
         }
 
         private void attendeesToolStripMenuItem_Click(object sender, EventArgs e)

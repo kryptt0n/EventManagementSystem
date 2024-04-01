@@ -9,5 +9,10 @@ namespace EventManagementSystem
     public class Manager : User
     {
         public List<Event> Events {  get; set; }
+
+        public Manager()
+        {
+            Role = Role.Manager;
+        }
     }
 }

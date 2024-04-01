@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Logging;
+using MySqlConnector;
 
 namespace EventManagementSystem
 {
     public partial class EventAttendeesList : Form
     {
-        public EventAttendeesList()
+        private MySqlConnection connection;
+        private string eventId;
+        public EventAttendeesList(string eventId)
         {
             InitializeComponent();
+            this.eventId = eventId;
+            connection = Program.db.GetConnection();
+            LoadAttendees();
+            LoadRegisteredAttendees();
+            LoadEventInfo();
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,12 +40,16 @@ namespace EventManagementSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AllEvents form = new AllEvents();
+            form.Show();
+            Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AllEvents form = new AllEvents();
+            form.Show();
+            Hide();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,7 +78,7 @@ namespace EventManagementSystem
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail(AllUsers.ActionType.Add);
+            UserDetail userDetail = new UserDetail(ActionType.Add);
             userDetail.Show();
         }
 
@@ -91,6 +104,84 @@ namespace EventManagementSystem
         private void btnCancelSearchUser_Click(object sender, EventArgs e)
         {
             txtUserName.Clear();
+        }
+
+        private void LoadRegisteredAttendees()
+        {
+            try
+            {
+                string sql = $"""
+                    SELECT UserName
+                    FROM Register
+                    WHERE EventId = {eventId};
+                    """;
+
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                listBox1.Items.Clear();
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        listBox2.Items.Add(reader.GetString(0));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void LoadAttendees()
+        {
+            string sql = """
+                SELECT UserName
+                FROM User
+                WHERE RoleId = 1003;
+                """;
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            listBox1.Items.Clear();
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                try
+                {
+                    while (reader.Read())
+                    {
+                        listBox1.Items.Add(reader.GetString(0));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                }
+            }
+        }
+        private void LoadEventInfo()
+        {
+            string sql = $"""
+                SELECT EventName, Capacity
+                FROM Events
+                WHERE EventId = {eventId};
+                """;
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            listBox1.Items.Clear();
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                try
+                {
+                    while (reader.Read())
+                    {
+                        txtEventName.Text = reader.GetString(0);
+                        txtRemainSeats.Text = (reader.GetInt32(1) - listBox2.Items.Count).ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                }
+            }
         }
     }
 }

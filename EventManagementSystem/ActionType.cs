@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem
 {
-    public class Administrator : User
+    public enum ActionType
     {
-        public Administrator()
-        {
-            Role = Role.Administrator;
-        }
+        Add,
+        Edit
     }
 }

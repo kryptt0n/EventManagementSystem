@@ -3,7 +3,7 @@ namespace EventManagementSystem
 {
     internal static class Program
     {
-        public static Database db = Database.GetInstance("server", "port", "un", "pw", "db");
+        public static Database db = Database.GetInstance("3.88.21.228", "3306", "vitaly", "vitalysukhinin", "humber");
 
         /// <summary>
         ///  The main entry point for the application.

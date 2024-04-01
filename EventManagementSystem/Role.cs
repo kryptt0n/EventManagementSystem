@@ -8,7 +8,7 @@ namespace EventManagementSystem
 {
     public enum Role
     {
-        Administrator,
+        Administrator = 1001,
         Manager,
         Attendee
     }

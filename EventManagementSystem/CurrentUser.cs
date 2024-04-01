@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem
 {
-    internal class CurrentUser
+    public class CurrentUser
     {
-        public User user { get; set; }
+        public static User User { get; set; }
 
     }
 }
