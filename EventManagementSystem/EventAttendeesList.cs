@@ -17,6 +17,12 @@ namespace EventManagementSystem
             InitializeComponent();
         }
 
+        // constructor to accept selected row
+        public EventAttendeesList(DataGridViewRow row)
+        {
+            InitializeComponent();
+        }
+
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AllUsers allUsers = new AllUsers();
@@ -91,6 +97,11 @@ namespace EventManagementSystem
         private void btnCancelSearchUser_Click(object sender, EventArgs e)
         {
             txtUserName.Clear();
+        }
+
+        private void EventAttendeesList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

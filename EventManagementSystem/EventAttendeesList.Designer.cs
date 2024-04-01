@@ -321,7 +321,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(335, 344);
+            button1.Location = new Point(339, 344);
             button1.Name = "button1";
             button1.Size = new Size(53, 51);
             button1.TabIndex = 23;
@@ -331,7 +331,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(335, 473);
+            button2.Location = new Point(339, 473);
             button2.Name = "button2";
             button2.Size = new Size(53, 51);
             button2.TabIndex = 24;
@@ -377,6 +377,7 @@
             Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "EventAttendeesList";
             Text = "Event Attendees";
+            Load += EventAttendeesList_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
