@@ -34,6 +34,18 @@ namespace EventManagementSystem
                 comboBoxValid.SelectedIndex = 0;
                 comboBoxValid.Enabled = false;
             }
+            if(action == ActionType.Signup)
+            {
+                this.Text = "Sign Up";
+                menuStrip1.Visible = false;
+                attendeeRadioBtn.Checked = true;
+                attendeeRadioBtn.Enabled = false;
+                adminRadioBtn.Enabled = false;
+                managerRadioBtn.Enabled = false;
+                comboBoxValid.SelectedIndex = 0;
+                comboBoxValid.Enabled = false;
+            }
+
 
         }
 
@@ -143,7 +155,7 @@ namespace EventManagementSystem
                 string phone = txtPhone.Text;
                 char valid = char.Parse(comboBoxValid.Text);
 
-                if (actionType == ActionType.Add)
+                if (actionType == ActionType.Add || actionType == ActionType.Signup)
                 {
                     try
                     {

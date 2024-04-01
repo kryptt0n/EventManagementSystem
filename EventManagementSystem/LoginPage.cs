@@ -24,7 +24,7 @@ namespace EventManagementSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            UserDetail userDetail = new UserDetail(ActionType.Add);
+            UserDetail userDetail = new UserDetail(ActionType.Signup);
             userDetail.Show();
         }
 
@@ -76,7 +76,8 @@ namespace EventManagementSystem
                 AllEvents allEvents = new AllEvents();
                 allEvents.Show();
                 Hide();
-            } else
+            }
+            else
             {
                 MessageBox.Show("User was not found!", "Error", MessageBoxButtons.OK);
             }
@@ -98,7 +99,7 @@ namespace EventManagementSystem
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    while(reader.Read())
+                    while (reader.Read())
                     {
                         role = reader.GetInt32(0);
                     }
@@ -110,6 +111,11 @@ namespace EventManagementSystem
                 MessageBox.Show("Error in database", "Error", MessageBoxButtons.OK);
                 return false;
             }
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,6 +9,7 @@ namespace EventManagementSystem
     public enum ActionType
     {
         Add,
-        Edit
+        Edit,
+        Signup
     }
 }

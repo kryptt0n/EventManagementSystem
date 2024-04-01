@@ -183,5 +183,10 @@ namespace EventManagementSystem
                 }
             }
         }
+
+        private void EventAttendeesList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
