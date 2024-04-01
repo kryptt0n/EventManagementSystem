@@ -377,7 +377,6 @@
             Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "EventAttendeesList";
             Text = "Event Attendees";
-            Load += EventAttendeesList_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
