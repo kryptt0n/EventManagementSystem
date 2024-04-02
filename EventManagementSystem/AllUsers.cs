@@ -177,6 +177,12 @@ namespace EventManagementSystem
                 DataTable dataTable = new DataTable();
                 dataTable.Load(dataReader);
                 dataGridUsers.DataSource = dataTable;
+
+                string columnNameToHide = "Password"; // Change this to the name of the column you want to hide
+                if (dataGridUsers.Columns.Contains("Password"))
+                {
+                    dataGridUsers.Columns[columnNameToHide].Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -201,7 +207,7 @@ namespace EventManagementSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void btnSearchEvent_Click(object sender, EventArgs e)
@@ -240,6 +246,9 @@ namespace EventManagementSystem
                 DataTable dataTable = new DataTable();
                 dataTable.Load(mySqlDataReader);
                 dataGridUsers.DataSource = dataTable;
+
+                
+
             }
             catch (MySqlException mse)
             {

@@ -196,6 +196,12 @@ namespace EventManagementSystem
                     DataTable dataTable = new DataTable();
                     dataTable.Load(dataReader);
                     dataGridEvents.DataSource = dataTable;
+
+                    string columnNameToHide = "EventId"; // Change this to the name of the column you want to hide
+                    if (dataGridEvents.Columns.Contains("EventId"))
+                    {
+                        dataGridEvents.Columns[columnNameToHide].Visible = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -297,6 +303,11 @@ namespace EventManagementSystem
         }
 
         private void AllEvents_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

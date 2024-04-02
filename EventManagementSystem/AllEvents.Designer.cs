@@ -275,14 +275,14 @@
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(270, 34);
+            toolStripMenuItem5.Size = new Size(210, 34);
             toolStripMenuItem5.Text = "All Events";
             toolStripMenuItem5.Click += viewEventsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem6
             // 
             toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(270, 34);
+            toolStripMenuItem6.Size = new Size(210, 34);
             toolStripMenuItem6.Text = "Add Event";
             toolStripMenuItem6.Click += addEventToolStripMenuItem_Click;
             // 
@@ -388,6 +388,7 @@
             dataGridEvents.RowHeadersWidth = 82;
             dataGridEvents.Size = new Size(1116, 355);
             dataGridEvents.TabIndex = 28;
+            dataGridEvents.CellContentClick += dataGridEvents_CellContentClick;
             // 
             // AllEvents
             // 
