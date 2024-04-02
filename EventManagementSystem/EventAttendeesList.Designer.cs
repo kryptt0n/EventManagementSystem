@@ -48,18 +48,18 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             groupBox1 = new GroupBox();
             btnCancelSearchUser = new Button();
-            btnSearchUser = new Button();
-            txtUserName = new TextBox();
+            btnSearchUnregistered = new Button();
+            txtUnregistered = new TextBox();
             label2 = new Label();
-            listBox1 = new ListBox();
+            listBoxUnregistered = new ListBox();
             groupBox2 = new GroupBox();
             button3 = new Button();
-            button4 = new Button();
-            textBox2 = new TextBox();
+            btnSearchRegistered = new Button();
+            txtRegistered = new TextBox();
             label4 = new Label();
-            listBox2 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
+            listBoxRegistered = new ListBox();
+            moveRightBtn = new Button();
+            moveLeftBtn = new Button();
             btnSave = new Button();
             btnCancel = new Button();
             menuStrip1.SuspendLayout();
@@ -75,7 +75,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(741, 30);
+            menuStrip1.Size = new Size(741, 37);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -83,20 +83,20 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(52, 26);
+            fileToolStripMenuItem.Size = new Size(69, 33);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(153, 34);
+            loginToolStripMenuItem.Size = new Size(201, 44);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(153, 34);
+            exitToolStripMenuItem.Size = new Size(201, 44);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -104,20 +104,20 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(78, 26);
+            eventsToolStripMenuItem.Size = new Size(103, 33);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(191, 34);
+            viewEventsToolStripMenuItem.Size = new Size(252, 44);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(191, 34);
+            addEventToolStripMenuItem.Size = new Size(252, 44);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -125,20 +125,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(69, 26);
+            usersToolStripMenuItem.Size = new Size(93, 33);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(182, 34);
+            allUsersToolStripMenuItem.Size = new Size(242, 44);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(182, 34);
+            addUserToolStripMenuItem.Size = new Size(242, 44);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -146,20 +146,20 @@
             // 
             attendeeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { myEventsToolStripMenuItem, registForEventsToolStripMenuItem });
             attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
-            attendeeToolStripMenuItem.Size = new Size(96, 26);
+            attendeeToolStripMenuItem.Size = new Size(128, 33);
             attendeeToolStripMenuItem.Text = "Attendee";
             // 
             // myEventsToolStripMenuItem
             // 
             myEventsToolStripMenuItem.Name = "myEventsToolStripMenuItem";
-            myEventsToolStripMenuItem.Size = new Size(244, 34);
+            myEventsToolStripMenuItem.Size = new Size(326, 44);
             myEventsToolStripMenuItem.Text = "My Events";
             myEventsToolStripMenuItem.Click += myEventsToolStripMenuItem_Click;
             // 
             // registForEventsToolStripMenuItem
             // 
             registForEventsToolStripMenuItem.Name = "registForEventsToolStripMenuItem";
-            registForEventsToolStripMenuItem.Size = new Size(244, 34);
+            registForEventsToolStripMenuItem.Size = new Size(326, 44);
             registForEventsToolStripMenuItem.Text = "Regist for Events";
             registForEventsToolStripMenuItem.Click += registForEventsToolStripMenuItem_Click;
             // 
@@ -169,7 +169,7 @@
             txtRemainSeats.Location = new Point(509, 55);
             txtRemainSeats.Name = "txtRemainSeats";
             txtRemainSeats.ReadOnly = true;
-            txtRemainSeats.Size = new Size(196, 29);
+            txtRemainSeats.Size = new Size(196, 36);
             txtRemainSeats.TabIndex = 20;
             // 
             // label3
@@ -177,7 +177,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(375, 57);
             label3.Name = "label3";
-            label3.Size = new Size(116, 22);
+            label3.Size = new Size(158, 29);
             label3.TabIndex = 19;
             label3.Text = "Remain Seats";
             // 
@@ -187,7 +187,7 @@
             txtEventName.Location = new Point(147, 55);
             txtEventName.Name = "txtEventName";
             txtEventName.ReadOnly = true;
-            txtEventName.Size = new Size(196, 29);
+            txtEventName.Size = new Size(196, 36);
             txtEventName.TabIndex = 18;
             // 
             // label1
@@ -195,17 +195,17 @@
             label1.AutoSize = true;
             label1.Location = new Point(25, 57);
             label1.Name = "label1";
-            label1.Size = new Size(105, 22);
+            label1.Size = new Size(142, 29);
             label1.TabIndex = 17;
             label1.Text = "Event Name";
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnCancelSearchUser);
-            groupBox1.Controls.Add(btnSearchUser);
-            groupBox1.Controls.Add(txtUserName);
+            groupBox1.Controls.Add(btnSearchUnregistered);
+            groupBox1.Controls.Add(txtUnregistered);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(listBox1);
+            groupBox1.Controls.Add(listBoxUnregistered);
             groupBox1.Location = new Point(25, 119);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(285, 494);
@@ -223,49 +223,50 @@
             btnCancelSearchUser.UseVisualStyleBackColor = true;
             btnCancelSearchUser.Click += btnCancelSearchUser_Click;
             // 
-            // btnSearchUser
+            // btnSearchUnregistered
             // 
-            btnSearchUser.Location = new Point(30, 95);
-            btnSearchUser.Name = "btnSearchUser";
-            btnSearchUser.Size = new Size(93, 35);
-            btnSearchUser.TabIndex = 16;
-            btnSearchUser.Text = "Search";
-            btnSearchUser.UseVisualStyleBackColor = true;
+            btnSearchUnregistered.Location = new Point(30, 95);
+            btnSearchUnregistered.Name = "btnSearchUnregistered";
+            btnSearchUnregistered.Size = new Size(93, 35);
+            btnSearchUnregistered.TabIndex = 16;
+            btnSearchUnregistered.Text = "Search";
+            btnSearchUnregistered.UseVisualStyleBackColor = true;
+            btnSearchUnregistered.Click += btnSearchUnregistered_Click;
             // 
-            // txtUserName
+            // txtUnregistered
             // 
-            txtUserName.BackColor = SystemColors.Window;
-            txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(122, 41);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(146, 29);
-            txtUserName.TabIndex = 10;
+            txtUnregistered.BackColor = SystemColors.Window;
+            txtUnregistered.BorderStyle = BorderStyle.FixedSingle;
+            txtUnregistered.Location = new Point(122, 41);
+            txtUnregistered.Name = "txtUnregistered";
+            txtUnregistered.Size = new Size(146, 36);
+            txtUnregistered.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(14, 44);
             label2.Name = "label2";
-            label2.Size = new Size(96, 22);
+            label2.Size = new Size(132, 29);
             label2.TabIndex = 9;
             label2.Text = "User Name";
             // 
-            // listBox1
+            // listBoxUnregistered
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 22;
-            listBox1.Location = new Point(14, 148);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(254, 290);
-            listBox1.TabIndex = 0;
+            listBoxUnregistered.FormattingEnabled = true;
+            listBoxUnregistered.ItemHeight = 29;
+            listBoxUnregistered.Location = new Point(14, 148);
+            listBoxUnregistered.Name = "listBoxUnregistered";
+            listBoxUnregistered.Size = new Size(254, 265);
+            listBoxUnregistered.TabIndex = 0;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button4);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(btnSearchRegistered);
+            groupBox2.Controls.Add(txtRegistered);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(listBox2);
+            groupBox2.Controls.Add(listBoxRegistered);
             groupBox2.Location = new Point(420, 119);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(285, 494);
@@ -283,60 +284,62 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button4
+            // btnSearchRegistered
             // 
-            button4.Location = new Point(31, 98);
-            button4.Name = "button4";
-            button4.Size = new Size(93, 35);
-            button4.TabIndex = 20;
-            button4.Text = "Search";
-            button4.UseVisualStyleBackColor = true;
+            btnSearchRegistered.Location = new Point(31, 98);
+            btnSearchRegistered.Name = "btnSearchRegistered";
+            btnSearchRegistered.Size = new Size(93, 35);
+            btnSearchRegistered.TabIndex = 20;
+            btnSearchRegistered.Text = "Search";
+            btnSearchRegistered.UseVisualStyleBackColor = true;
+            btnSearchRegistered.Click += btnSearchRegistered_Click;
             // 
-            // textBox2
+            // txtRegistered
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(123, 44);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(146, 29);
-            textBox2.TabIndex = 19;
+            txtRegistered.BackColor = SystemColors.Window;
+            txtRegistered.BorderStyle = BorderStyle.FixedSingle;
+            txtRegistered.Location = new Point(123, 44);
+            txtRegistered.Name = "txtRegistered";
+            txtRegistered.Size = new Size(146, 36);
+            txtRegistered.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(23, 47);
             label4.Name = "label4";
-            label4.Size = new Size(80, 22);
+            label4.Size = new Size(108, 29);
             label4.TabIndex = 18;
             label4.Text = "Attendee";
             // 
-            // listBox2
+            // listBoxRegistered
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 22;
-            listBox2.Location = new Point(15, 148);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(254, 290);
-            listBox2.TabIndex = 0;
+            listBoxRegistered.FormattingEnabled = true;
+            listBoxRegistered.ItemHeight = 29;
+            listBoxRegistered.Location = new Point(15, 148);
+            listBoxRegistered.Name = "listBoxRegistered";
+            listBoxRegistered.Size = new Size(254, 265);
+            listBoxRegistered.TabIndex = 0;
             // 
-            // button1
+            // moveRightBtn
             // 
-            button1.Location = new Point(339, 344);
-            button1.Name = "button1";
-            button1.Size = new Size(53, 51);
-            button1.TabIndex = 23;
-            button1.Text = ">";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            moveRightBtn.Location = new Point(339, 344);
+            moveRightBtn.Name = "moveRightBtn";
+            moveRightBtn.Size = new Size(53, 51);
+            moveRightBtn.TabIndex = 23;
+            moveRightBtn.Text = ">";
+            moveRightBtn.UseVisualStyleBackColor = true;
+            moveRightBtn.Click += moveRightBtn_Click;
             // 
-            // button2
+            // moveLeftBtn
             // 
-            button2.Location = new Point(339, 473);
-            button2.Name = "button2";
-            button2.Size = new Size(53, 51);
-            button2.TabIndex = 24;
-            button2.Text = "<";
-            button2.UseVisualStyleBackColor = true;
+            moveLeftBtn.Location = new Point(339, 473);
+            moveLeftBtn.Name = "moveLeftBtn";
+            moveLeftBtn.Size = new Size(53, 51);
+            moveLeftBtn.TabIndex = 24;
+            moveLeftBtn.Text = "<";
+            moveLeftBtn.UseVisualStyleBackColor = true;
+            moveLeftBtn.Click += moveLeftBtn_Click;
             // 
             // btnSave
             // 
@@ -346,7 +349,7 @@
             btnSave.TabIndex = 25;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += button5_Click;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -356,17 +359,17 @@
             btnCancel.TabIndex = 26;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += button6_Click;
+            btnCancel.Click += btnCancel_Click;
             // 
             // EventAttendeesList
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(13F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(741, 713);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(moveLeftBtn);
+            Controls.Add(moveRightBtn);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(txtRemainSeats);
@@ -407,17 +410,17 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Button button1;
-        private Button button2;
-        private ListBox listBox1;
-        private ListBox listBox2;
-        private TextBox txtUserName;
+        private Button moveRightBtn;
+        private Button moveLeftBtn;
+        private ListBox listBoxUnregistered;
+        private ListBox listBoxRegistered;
+        private TextBox txtUnregistered;
         private Label label2;
         private Button btnCancelSearchUser;
-        private Button btnSearchUser;
+        private Button btnSearchUnregistered;
         private Button button3;
-        private Button button4;
-        private TextBox textBox2;
+        private Button btnSearchRegistered;
+        private TextBox txtRegistered;
         private Label label4;
         private Button btnSave;
         private Button btnCancel;

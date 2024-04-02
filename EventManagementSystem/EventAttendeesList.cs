@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace EventManagementSystem
 {
@@ -16,6 +17,8 @@ namespace EventManagementSystem
     {
         private MySqlConnection connection;
         private string eventId;
+        private List<string> registeredUsers;
+        private List<string> unregisteredUsers;
         public EventAttendeesList(string eventId)
         {
             InitializeComponent();
@@ -33,20 +36,43 @@ namespace EventManagementSystem
             Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void moveRightBtn_Click(object sender, EventArgs e)
         {
+            if (listBoxUnregistered.SelectedItem != null)
+            {
+                int remainSeats = Convert.ToInt32(txtRemainSeats.Text);
+                if (remainSeats > 0)
+                {
+                    txtRemainSeats.Text = (remainSeats - 1).ToString();
+                    string userName = listBoxUnregistered.SelectedItem.ToString();
+                    listBoxUnregistered.Items.Remove(userName);
+                    listBoxRegistered.Items.Add(userName);
+                }
+                else
+                {
+                    MessageBox.Show("Not enough capacity for new attendees", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select an unregistered user", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             AllEvents form = new AllEvents();
             form.Show();
             Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            RemoveAllAttendees();
+            AddRegisteredAttendees();
             AllEvents form = new AllEvents();
             form.Show();
             Hide();
@@ -103,7 +129,7 @@ namespace EventManagementSystem
 
         private void btnCancelSearchUser_Click(object sender, EventArgs e)
         {
-            txtUserName.Clear();
+            txtUnregistered.Clear();
         }
 
         private void LoadRegisteredAttendees()
@@ -117,12 +143,13 @@ namespace EventManagementSystem
                     """;
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                listBox2.Items.Clear();
+                listBoxRegistered.Items.Clear();
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        listBox2.Items.Add(reader.GetString(0));
+                        listBoxRegistered.Items.Add(reader.GetString(0));
+                        registeredUsers.Add(reader.GetString(0));
                     }
                 }
             }
@@ -144,14 +171,15 @@ namespace EventManagementSystem
             sql += alreadyRegistered;
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
-            listBox1.Items.Clear();
+            listBoxUnregistered.Items.Clear();
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 try
                 {
                     while (reader.Read())
                     {
-                        listBox1.Items.Add(reader.GetString(0));
+                        listBoxUnregistered.Items.Add(reader.GetString(0));
+                        unregisteredUsers.Add(reader.GetString(0));
                     }
                 }
                 catch (Exception ex)
@@ -165,10 +193,10 @@ namespace EventManagementSystem
         {
             string result = "";
 
-            if (listBox2.Items.Count > 0)
+            if (listBoxRegistered.Items.Count > 0)
             {
                 result += "AND UserName NOT IN (";
-                foreach (string user in listBox2.Items)
+                foreach (string user in listBoxRegistered.Items)
                 {
                     result += $"'{user}', ";
                 }
@@ -193,7 +221,7 @@ namespace EventManagementSystem
                     while (reader.Read())
                     {
                         txtEventName.Text = reader.GetString(0);
-                        txtRemainSeats.Text = (reader.GetInt32(1) - listBox2.Items.Count).ToString();
+                        txtRemainSeats.Text = (reader.GetInt32(1) - listBoxRegistered.Items.Count).ToString();
                     }
                 }
                 catch (Exception ex)
@@ -206,6 +234,66 @@ namespace EventManagementSystem
         private void EventAttendeesList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void moveLeftBtn_Click(object sender, EventArgs e)
+        {
+            if (listBoxRegistered.SelectedItem != null)
+            {
+                int remainSeats = Convert.ToInt32(txtRemainSeats.Text);
+                txtRemainSeats.Text = (remainSeats + 1).ToString();
+                string userName = listBoxRegistered.SelectedItem.ToString();
+                listBoxRegistered.Items.Remove(userName);
+                listBoxUnregistered.Items.Add(userName);
+            }
+            else
+            {
+                MessageBox.Show("Please select an registered user", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void RemoveAllAttendees()
+        {
+            try
+            {
+                string sql = $"DELETE FROM Register WHERE EventId = {eventId}";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void AddRegisteredAttendees()
+        {
+            try
+            {
+                string sql = "";
+                foreach (string userName in registeredUsers)
+                {
+                    sql += $"INSERT INTO Register VALUES ('{userName}', {eventId});";
+                }
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnSearchRegistered_Click(object sender, EventArgs e)
+        {
+            // Display from registered list
+        }
+
+        private void btnSearchUnregistered_Click(object sender, EventArgs e)
+        {
+            // Display from unregistered list
         }
     }
 }
