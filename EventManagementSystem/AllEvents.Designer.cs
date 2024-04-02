@@ -162,6 +162,7 @@
             // 
             dateTimePickerEvent.Location = new Point(630, 40);
             dateTimePickerEvent.Name = "dateTimePickerEvent";
+            dateTimePickerEvent.ShowCheckBox = true;
             dateTimePickerEvent.Size = new Size(220, 36);
             dateTimePickerEvent.TabIndex = 9;
             // 

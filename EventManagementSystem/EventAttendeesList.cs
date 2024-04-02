@@ -21,8 +21,8 @@ namespace EventManagementSystem
             InitializeComponent();
             this.eventId = eventId;
             connection = Program.db.GetConnection();
-            LoadAttendees();
             LoadRegisteredAttendees();
+            LoadAttendees();
             LoadEventInfo();
         }
 
@@ -117,7 +117,7 @@ namespace EventManagementSystem
                     """;
 
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                listBox1.Items.Clear();
+                listBox2.Items.Clear();
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -137,8 +137,11 @@ namespace EventManagementSystem
             string sql = """
                 SELECT UserName
                 FROM User
-                WHERE RoleId = 1003;
+                WHERE RoleId = 1003 
                 """;
+
+            string alreadyRegistered = GetAttendeesUserNames();
+            sql += alreadyRegistered;
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             listBox1.Items.Clear();
@@ -157,6 +160,23 @@ namespace EventManagementSystem
                 }
             }
         }
+
+        private string GetAttendeesUserNames()
+        {
+            string result = "";
+
+            if (listBox2.Items.Count > 0)
+            {
+                result += "AND UserName NOT IN (";
+                foreach (string user in listBox2.Items)
+                {
+                    result += $"'{user}', ";
+                }
+            }
+            result = result.Remove(result.Length - 2);
+            result += ")";
+            return result;
+        }
         private void LoadEventInfo()
         {
             string sql = $"""
@@ -166,7 +186,6 @@ namespace EventManagementSystem
                 """;
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
-            listBox1.Items.Clear();
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 try

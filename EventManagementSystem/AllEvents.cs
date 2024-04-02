@@ -188,6 +188,7 @@ namespace EventManagementSystem
                     FROM Events
                     WHERE Valid = 'Y'
                     """;
+
                 MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                 using (MySqlDataReader dataReader = mySqlCommand.ExecuteReader())
                 {
