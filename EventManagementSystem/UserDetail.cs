@@ -105,6 +105,7 @@ namespace EventManagementSystem
         {
             EventDetail eventDetail = new EventDetail();
             eventDetail.Show();
+            Hide();
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,7 +124,17 @@ namespace EventManagementSystem
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(actionType == ActionType.Add)
+            {
+                this.Close();
+                AllUsers allUsers = new AllUsers();
+                allUsers.Show();
+            }
+            if(actionType == ActionType.Signup)
+            {
+                this.Close();
+            }
+
         }
 
         // save button action
@@ -164,28 +175,46 @@ namespace EventManagementSystem
                         mySqlCommand.ExecuteNonQuery();
 
                         MessageBox.Show(" New user added successfully!!!", "New User", MessageBoxButtons.OK);
-                }
-                    catch (Exception ex)
-                    {
-                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
-                }
-            }
 
-                if (actionType == ActionType.Edit)
-                {
-                    try
-                    {
-                        String qStr = $"UPDATE User SET Password = '{password}', RoleId = {roleId}, DateOfBirth = '{dob}', Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
-                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                        mySqlCommand.ExecuteNonQuery();
-
-                        MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
+                        if (actionType == ActionType.Add)
+                        {
+                            AllUsers allUsers = new AllUsers();
+                            allUsers.Show();
+                            Hide();
+                        }
+                        if(actionType == ActionType.Signup)
+                        {
+                            Hide();
+                        }
+                        
                     }
                     catch (Exception ex)
                     {
                     MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                }
+
+                    if (actionType == ActionType.Edit)
+                    {
+                        try
+                        {
+                            String qStr = $"UPDATE User SET Password = '{password}', RoleId = {roleId}, DateOfBirth = '{dob}', Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
+                            MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                            mySqlCommand.ExecuteNonQuery();
+
+                            MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
+
+                            AllUsers allUsers = new AllUsers();
+                            allUsers.Show();
+                            Hide();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                        }
                     }
                 }
+                
+               
             }
         }
 

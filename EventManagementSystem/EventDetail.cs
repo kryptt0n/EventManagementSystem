@@ -32,8 +32,10 @@ namespace EventManagementSystem
         { 
             if (action == ActionType.Add)
             {
-
-            } else if (action == ActionType.Edit)
+                comboBoxValid.SelectedIndex = 0;
+                comboBoxValid.Enabled = false;
+            } 
+            else if (action == ActionType.Edit)
             {
                 if (row != null)
                 {
@@ -63,57 +65,61 @@ namespace EventManagementSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            string eventName = txtEventName.Text;
-            string date = dateTimePickerEvent.Value.ToString("yyyy-MM-dd"); 
-            string capacity = txtEventCapacity.Text;
-            string location = txtBoxtLocation.Text;
-            string managerName = comboBoxManager.Text;
-            string organizer = txtEventOragnizer.Text;
-            string valid = comboBoxValid.Text;
-            string description = richTextBoxEventDesc.Text;
-
-            if (actionType == ActionType.Add)
+            if (NameValidate() && ManagerValidate() && CapacityValidate() && LocationValidate() && OrganizerValidate() && ValidValidate())
             {
-                try
-                {
-                    string qStr = $"INSERT INTO Events(EventName, Date, Capacity, Location, Organizer, ManagerName, Description, Valid)  VALUES " +
-                        $"('{eventName}','{date}',{capacity},'{location}','{organizer}','{managerName}','{description}', '{valid}')";
-                    MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                    mySqlCommand.ExecuteNonQuery();
+                string eventName = txtEventName.Text;
+                string date = dateTimePickerEvent.Value.ToString("yyyy-MM-dd");
+                string capacity = txtEventCapacity.Text;
+                string location = txtBoxtLocation.Text;
+                string managerName = comboBoxManager.Text;
+                string organizer = txtEventOragnizer.Text;
+                string valid = comboBoxValid.Text;
+                string description = richTextBoxEventDesc.Text;
 
-                    MessageBox.Show(" New event added successfully!!!", "New Event", MessageBoxButtons.OK);
-                }
-                catch (Exception ex)
+                if (actionType == ActionType.Add)
                 {
-                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
-                }
-                
-            }
-            else if (actionType == ActionType.Edit)
-            {
-                try
-                {
-                    string qStr = $"UPDATE Events SET EventName = '{eventName}', Date = '{date}', Capacity = '{capacity}', " +
-                        $"Location = '{location}', Organizer = '{organizer}', ManagerName = '{managerName}', Description = '{description}', Valid = '{valid}'" +
-                        $" WHERE EventId = '{eventID}'";
-                    MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                    mySqlCommand.ExecuteNonQuery();
+                    try
+                    {
+                        string qStr = $"INSERT INTO Events(EventName, Date, Capacity, Location, Organizer, ManagerName, Description, Valid)  VALUES " +
+                            $"('{eventName}','{date}',{capacity},'{location}','{organizer}','{managerName}','{description}', '{valid}')";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
 
-                    MessageBox.Show(" Event updated!!!", "Edit Event", MessageBoxButtons.OK);
+                        MessageBox.Show(" New event added successfully!!!", "New Event", MessageBoxButtons.OK);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }
+
                 }
-                catch (Exception ex)
+                else if (actionType == ActionType.Edit)
                 {
-                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    try
+                    {
+                        string qStr = $"UPDATE Events SET EventName = '{eventName}', Date = '{date}', Capacity = '{capacity}', " +
+                            $"Location = '{location}', Organizer = '{organizer}', ManagerName = '{managerName}', Description = '{description}', Valid = '{valid}'" +
+                            $" WHERE EventId = '{eventID}'";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
+
+                        MessageBox.Show(" Event updated!!!", "Edit Event", MessageBoxButtons.OK);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }
                 }
-            }
-            AllEvents form = new AllEvents();
-            form.Show();
-            Hide();
+                AllEvents form = new AllEvents();
+                form.Show();
+                Hide();
+            } 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            AllEvents form = new AllEvents();
+            form.Show();
             Close();
         }
 
@@ -135,6 +141,7 @@ namespace EventManagementSystem
         {
             UserDetail userDetail = new UserDetail(ActionType.Add);
             userDetail.Show();
+            Hide();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,6 +228,98 @@ namespace EventManagementSystem
                 {
                     MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        // validate eventname not null and less than 45
+        private bool NameValidate()
+        {
+            if (string.IsNullOrEmpty(txtEventName.Text))
+            {
+                MessageBox.Show("Name can't be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtEventName.Text.Length > 45)
+            {
+                MessageBox.Show("Name length can't exceed 45!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        // validate manager not null
+        private bool ManagerValidate()
+        {
+            if (comboBoxManager.SelectedIndex != -1)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Manager can't be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+        }
+
+        // validate capacity is int and not null
+        private bool CapacityValidate()
+        {
+            if (!string.IsNullOrEmpty(txtEventCapacity.Text))
+            {
+                int i;
+
+                if (!int.TryParse(txtEventCapacity.Text, out i))
+                {
+                    MessageBox.Show("Input a number for capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // validate location is not null
+        private bool LocationValidate()
+        {
+            if (string.IsNullOrEmpty(txtBoxtLocation.Text))
+            {
+                MessageBox.Show("Location can't be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtBoxtLocation.Text.Length > 45)
+            {
+                MessageBox.Show("Location length can't exceed 45!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        // validate organizer is not null
+        private bool OrganizerValidate()
+        {
+            if (string.IsNullOrEmpty(txtEventOragnizer.Text))
+            {
+                MessageBox.Show("Organizer can't be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtEventOragnizer.Text.Length > 45)
+            {
+                MessageBox.Show("Organizer length can't exceed 45!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        // validate valid not null
+        private bool ValidValidate()
+        {
+            if (comboBoxValid.SelectedIndex != -1)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Valid can't be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
         }
     }

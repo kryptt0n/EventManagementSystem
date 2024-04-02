@@ -69,7 +69,7 @@ namespace EventManagementSystem
             {
                 MessageBox.Show("Please select a row to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,6 +95,7 @@ namespace EventManagementSystem
         {
             UserDetail form = new UserDetail(ActionType.Add);
             form.Show();
+            Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -293,6 +294,11 @@ namespace EventManagementSystem
             {
                 MessageBox.Show("Please select a row to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AllEvents_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

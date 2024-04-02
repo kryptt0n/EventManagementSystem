@@ -100,12 +100,14 @@ namespace EventManagementSystem
         {
             EventDetail eventDetail = new EventDetail();
             eventDetail.Show();
+            Hide();
         }
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserDetail userDetail = new UserDetail(ActionType.Add);
             userDetail.Show();
+            Hide();
         }
 
         private void myEventsToolStripMenuItem_Click(object sender, EventArgs e)

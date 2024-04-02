@@ -46,11 +46,11 @@
             // 
             UserName.AutoSize = true;
             UserName.BackColor = Color.Transparent;
-            UserName.Font = new Font("Tahoma", 9F);
+            UserName.Font = new Font("Tahoma", 10.5F);
             UserName.ForeColor = Color.Black;
-            UserName.Location = new Point(620, 368);
+            UserName.Location = new Point(609, 368);
             UserName.Name = "UserName";
-            UserName.Size = new Size(90, 22);
+            UserName.Size = new Size(108, 25);
             UserName.TabIndex = 0;
             UserName.Text = "UserName";
             // 
@@ -58,48 +58,56 @@
             // 
             Password.AutoSize = true;
             Password.BackColor = Color.Transparent;
-            Password.Font = new Font("Tahoma", 9F);
+            Password.Font = new Font("Tahoma", 10.5F);
             Password.ForeColor = Color.Black;
-            Password.Location = new Point(626, 431);
+            Password.Location = new Point(615, 431);
             Password.Name = "Password";
-            Password.Size = new Size(84, 22);
+            Password.Size = new Size(100, 25);
             Password.TabIndex = 1;
             Password.Text = "Password";
             // 
             // txtUserName
             // 
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(748, 366);
+            txtUserName.Font = new Font("Tahoma", 10.5F);
+            txtUserName.Location = new Point(737, 366);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(157, 29);
+            txtUserName.Size = new Size(172, 33);
             txtUserName.TabIndex = 2;
             // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(748, 429);
+            txtPassword.Font = new Font("Tahoma", 10.5F);
+            txtPassword.Location = new Point(737, 429);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(157, 29);
+            txtPassword.Size = new Size(172, 33);
             txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(626, 494);
+            btnLogin.BackColor = Color.Wheat;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Tahoma", 10.5F);
+            btnLogin.Location = new Point(609, 505);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(102, 34);
+            btnLogin.Size = new Size(133, 42);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // btnSignUp
             // 
-            btnSignUp.Location = new Point(766, 494);
+            btnSignUp.BackColor = Color.Wheat;
+            btnSignUp.FlatStyle = FlatStyle.Flat;
+            btnSignUp.Font = new Font("Tahoma", 10.5F);
+            btnSignUp.Location = new Point(763, 505);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(102, 34);
+            btnSignUp.Size = new Size(133, 42);
             btnSignUp.TabIndex = 5;
             btnSignUp.Text = "Sign Up";
-            btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.UseVisualStyleBackColor = false;
             btnSignUp.Click += btnExit_Click;
             // 
             // label1
@@ -139,7 +147,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Bisque;
+            BackColor = Color.SeaShell;
             ClientSize = new Size(1002, 620);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);

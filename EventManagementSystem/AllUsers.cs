@@ -39,6 +39,7 @@ namespace EventManagementSystem
         {
             UserDetail form = new UserDetail(ActionType.Add);
             form.Show();
+            Hide();
         }
 
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,11 +53,13 @@ namespace EventManagementSystem
         {
             EventDetail form = new EventDetail();
             form.Show();
+            Hide();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
             OpenUserDetailFormAdd(ActionType.Add);
+            Hide();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -65,7 +68,7 @@ namespace EventManagementSystem
             {
                 DataGridViewRow row = dataGridUsers.SelectedRows[0];
                 OpenUserDetailFormEdit(ActionType.Edit, row);
-
+                Hide();
             }
             else
             {
@@ -219,17 +222,17 @@ namespace EventManagementSystem
                     // partial and case insensitive search
                     qStr += $"AND LOWER(UserName) LIKE '%{txtSearchName.Text.ToLower()}%'";
                 }
-                if(adminRadioBtn.Checked == true)
+                if (adminRadioBtn.Checked == true)
                 {
-                    qStr += $"AND RoleId = 1001";
+                    qStr += $"AND User.RoleId = 1001";
                 }
                 if (managerRadioBtn.Checked == true)
                 {
-                    qStr += $"AND RoleId = 1002";
+                    qStr += $"AND User.RoleId = 1002";
                 }
                 if (attendeeRadioBtn.Checked == true)
                 {
-                    qStr += $"AND RoleId = 1003";
+                    qStr += $"AND User.RoleId = 1003";
                 }
 
                 MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
@@ -238,14 +241,19 @@ namespace EventManagementSystem
                 dataTable.Load(mySqlDataReader);
                 dataGridUsers.DataSource = dataTable;
             }
-            catch(MySqlException mse)
+            catch (MySqlException mse)
             {
-                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                MessageBox.Show(" Error in Database Operation2", "Error", MessageBoxButtons.OK);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(" Error in System", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,9 +77,11 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(dateTimePickerEvent);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(41, 424);
+            groupBox1.Location = new Point(49, 505);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1093, 158);
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(1312, 180);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             groupBox1.Text = "Search Events";
@@ -88,46 +90,55 @@
             // 
             txtBoxLocation.BackColor = SystemColors.Window;
             txtBoxLocation.BorderStyle = BorderStyle.FixedSingle;
-            txtBoxLocation.Location = new Point(154, 91);
+            txtBoxLocation.Location = new Point(185, 103);
+            txtBoxLocation.Margin = new Padding(4, 3, 4, 3);
             txtBoxLocation.Name = "txtBoxLocation";
-            txtBoxLocation.Size = new Size(220, 36);
+            txtBoxLocation.Size = new Size(264, 33);
             txtBoxLocation.TabIndex = 16;
             // 
             // btnCancelSearchEvent
             // 
-            btnCancelSearchEvent.Location = new Point(969, 93);
+            btnCancelSearchEvent.BackColor = Color.Wheat;
+            btnCancelSearchEvent.FlatStyle = FlatStyle.Flat;
+            btnCancelSearchEvent.Location = new Point(1118, 101);
+            btnCancelSearchEvent.Margin = new Padding(4, 3, 4, 3);
             btnCancelSearchEvent.Name = "btnCancelSearchEvent";
-            btnCancelSearchEvent.Size = new Size(102, 35);
+            btnCancelSearchEvent.Size = new Size(143, 49);
             btnCancelSearchEvent.TabIndex = 15;
             btnCancelSearchEvent.Text = "Clear";
-            btnCancelSearchEvent.UseVisualStyleBackColor = true;
+            btnCancelSearchEvent.UseVisualStyleBackColor = false;
             btnCancelSearchEvent.Click += btnCancelSearchEvent_Click;
             // 
             // txtEventName
             // 
             txtEventName.BackColor = SystemColors.Window;
             txtEventName.BorderStyle = BorderStyle.FixedSingle;
-            txtEventName.Location = new Point(154, 43);
+            txtEventName.Location = new Point(185, 49);
+            txtEventName.Margin = new Padding(4, 3, 4, 3);
             txtEventName.Name = "txtEventName";
-            txtEventName.Size = new Size(220, 36);
+            txtEventName.Size = new Size(264, 33);
             txtEventName.TabIndex = 8;
             // 
             // btnSearchEvent
             // 
-            btnSearchEvent.Location = new Point(969, 39);
+            btnSearchEvent.BackColor = Color.Wheat;
+            btnSearchEvent.FlatStyle = FlatStyle.Flat;
+            btnSearchEvent.Location = new Point(1118, 39);
+            btnSearchEvent.Margin = new Padding(4, 3, 4, 3);
             btnSearchEvent.Name = "btnSearchEvent";
-            btnSearchEvent.Size = new Size(102, 33);
+            btnSearchEvent.Size = new Size(143, 49);
             btnSearchEvent.TabIndex = 14;
             btnSearchEvent.Text = "Search";
-            btnSearchEvent.UseVisualStyleBackColor = true;
+            btnSearchEvent.UseVisualStyleBackColor = false;
             btnSearchEvent.Click += btnSearchEvent_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 46);
+            label1.Location = new Point(42, 52);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(75, 29);
+            label1.Size = new Size(66, 25);
             label1.TabIndex = 6;
             label1.Text = "Name";
             // 
@@ -135,85 +146,101 @@
             // 
             txtEventCapacity.BackColor = SystemColors.Window;
             txtEventCapacity.BorderStyle = BorderStyle.FixedSingle;
-            txtEventCapacity.Location = new Point(630, 87);
+            txtEventCapacity.Location = new Point(756, 99);
+            txtEventCapacity.Margin = new Padding(4, 3, 4, 3);
             txtEventCapacity.Name = "txtEventCapacity";
-            txtEventCapacity.Size = new Size(220, 36);
+            txtEventCapacity.Size = new Size(264, 33);
             txtEventCapacity.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(497, 45);
+            label2.Location = new Point(596, 51);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(140, 29);
+            label2.Size = new Size(123, 25);
             label2.TabIndex = 7;
             label2.Text = "Date / Time";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(497, 89);
+            label4.Location = new Point(596, 101);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(102, 29);
+            label4.Size = new Size(91, 25);
             label4.TabIndex = 12;
             label4.Text = "Capacity";
             // 
             // dateTimePickerEvent
             // 
-            dateTimePickerEvent.Location = new Point(630, 40);
+            dateTimePickerEvent.Location = new Point(756, 45);
+            dateTimePickerEvent.Margin = new Padding(4, 3, 4, 3);
             dateTimePickerEvent.Name = "dateTimePickerEvent";
             dateTimePickerEvent.ShowCheckBox = true;
-            dateTimePickerEvent.Size = new Size(220, 36);
+            dateTimePickerEvent.Size = new Size(263, 33);
             dateTimePickerEvent.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(35, 93);
+            label3.Location = new Point(42, 106);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(101, 29);
+            label3.Size = new Size(89, 25);
             label3.TabIndex = 10;
             label3.Text = "Location";
             // 
             // btnEventAttendees
             // 
-            btnEventAttendees.Location = new Point(1015, 251);
+            btnEventAttendees.BackColor = Color.Wheat;
+            btnEventAttendees.FlatStyle = FlatStyle.Flat;
+            btnEventAttendees.Location = new Point(1218, 303);
+            btnEventAttendees.Margin = new Padding(4, 3, 4, 3);
             btnEventAttendees.Name = "btnEventAttendees";
-            btnEventAttendees.Size = new Size(102, 34);
+            btnEventAttendees.Size = new Size(143, 49);
             btnEventAttendees.TabIndex = 19;
             btnEventAttendees.Text = "Attendees";
-            btnEventAttendees.UseVisualStyleBackColor = true;
+            btnEventAttendees.UseVisualStyleBackColor = false;
             btnEventAttendees.Click += btnEventAttendees_Click;
             // 
             // btnEditEvent
             // 
-            btnEditEvent.Location = new Point(1015, 154);
+            btnEditEvent.BackColor = Color.Wheat;
+            btnEditEvent.FlatStyle = FlatStyle.Flat;
+            btnEditEvent.Location = new Point(1218, 183);
+            btnEditEvent.Margin = new Padding(4, 3, 4, 3);
             btnEditEvent.Name = "btnEditEvent";
-            btnEditEvent.Size = new Size(102, 34);
+            btnEditEvent.Size = new Size(143, 49);
             btnEditEvent.TabIndex = 18;
             btnEditEvent.Text = "Edit Event";
-            btnEditEvent.UseVisualStyleBackColor = true;
+            btnEditEvent.UseVisualStyleBackColor = false;
             btnEditEvent.Click += btnEditEvent_Click;
             // 
             // btnAddEvent
             // 
-            btnAddEvent.Location = new Point(1015, 106);
+            btnAddEvent.BackColor = Color.Wheat;
+            btnAddEvent.FlatStyle = FlatStyle.Flat;
+            btnAddEvent.Location = new Point(1218, 123);
+            btnAddEvent.Margin = new Padding(4, 3, 4, 3);
             btnAddEvent.Name = "btnAddEvent";
-            btnAddEvent.Size = new Size(102, 34);
+            btnAddEvent.Size = new Size(143, 49);
             btnAddEvent.TabIndex = 20;
             btnAddEvent.Text = "Add Event";
-            btnAddEvent.UseVisualStyleBackColor = true;
+            btnAddEvent.UseVisualStyleBackColor = false;
             btnAddEvent.Click += button3_Click;
             // 
             // menuStrip2
             // 
-            menuStrip2.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            menuStrip2.BackColor = Color.Transparent;
+            menuStrip2.Font = new Font("Tahoma", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            menuStrip2.GripStyle = ToolStripGripStyle.Visible;
             menuStrip2.ImageScalingSize = new Size(24, 24);
             menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem4, usersToolStripMenuItem, attendeeToolStripMenuItem });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Padding = new Padding(5, 2, 0, 2);
-            menuStrip2.Size = new Size(1178, 37);
+            menuStrip2.Padding = new Padding(6, 2, 0, 2);
+            menuStrip2.Size = new Size(1414, 33);
             menuStrip2.TabIndex = 21;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -221,20 +248,20 @@
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3 });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(69, 33);
+            toolStripMenuItem1.Size = new Size(60, 29);
             toolStripMenuItem1.Text = "File";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(201, 44);
+            toolStripMenuItem2.Size = new Size(164, 34);
             toolStripMenuItem2.Text = "Login";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(201, 44);
+            toolStripMenuItem3.Size = new Size(164, 34);
             toolStripMenuItem3.Text = "Exit";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
@@ -242,20 +269,20 @@
             // 
             toolStripMenuItem4.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem5, toolStripMenuItem6 });
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(103, 33);
+            toolStripMenuItem4.Size = new Size(89, 29);
             toolStripMenuItem4.Text = "Events";
             // 
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(252, 44);
+            toolStripMenuItem5.Size = new Size(270, 34);
             toolStripMenuItem5.Text = "All Events";
             toolStripMenuItem5.Click += viewEventsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem6
             // 
             toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(252, 44);
+            toolStripMenuItem6.Size = new Size(270, 34);
             toolStripMenuItem6.Text = "Add Event";
             toolStripMenuItem6.Click += addEventToolStripMenuItem_Click;
             // 
@@ -263,20 +290,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(93, 33);
+            usersToolStripMenuItem.Size = new Size(79, 29);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(242, 44);
+            allUsersToolStripMenuItem.Size = new Size(200, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(242, 44);
+            addUserToolStripMenuItem.Size = new Size(200, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -284,38 +311,42 @@
             // 
             attendeeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { myEventsToolStripMenuItem, registForEventsToolStripMenuItem });
             attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
-            attendeeToolStripMenuItem.Size = new Size(128, 33);
+            attendeeToolStripMenuItem.Size = new Size(112, 29);
             attendeeToolStripMenuItem.Text = "Attendee";
             // 
             // myEventsToolStripMenuItem
             // 
             myEventsToolStripMenuItem.Name = "myEventsToolStripMenuItem";
-            myEventsToolStripMenuItem.Size = new Size(326, 44);
+            myEventsToolStripMenuItem.Size = new Size(272, 34);
             myEventsToolStripMenuItem.Text = "My Events";
             myEventsToolStripMenuItem.Click += myEventsToolStripMenuItem_Click;
             // 
             // registForEventsToolStripMenuItem
             // 
             registForEventsToolStripMenuItem.Name = "registForEventsToolStripMenuItem";
-            registForEventsToolStripMenuItem.Size = new Size(326, 44);
+            registForEventsToolStripMenuItem.Size = new Size(272, 34);
             registForEventsToolStripMenuItem.Text = "Regist for Events";
             registForEventsToolStripMenuItem.Click += registForEventsToolStripMenuItem_Click;
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(1015, 300);
+            btnRegister.BackColor = Color.Wheat;
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Location = new Point(1218, 363);
+            btnRegister.Margin = new Padding(4, 3, 4, 3);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(102, 34);
+            btnRegister.Size = new Size(143, 49);
             btnRegister.TabIndex = 22;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label6.Location = new Point(41, 66);
+            label6.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            label6.Location = new Point(49, 75);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(94, 31);
             label6.TabIndex = 25;
@@ -323,39 +354,47 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(1015, 203);
+            btnDelete.BackColor = Color.Wheat;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Location = new Point(1218, 243);
+            btnDelete.Margin = new Padding(4, 3, 4, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(102, 34);
+            btnDelete.Size = new Size(143, 49);
             btnDelete.TabIndex = 26;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnCancelRegister
             // 
-            btnCancelRegister.Location = new Point(1015, 349);
+            btnCancelRegister.BackColor = Color.Wheat;
+            btnCancelRegister.FlatStyle = FlatStyle.Flat;
+            btnCancelRegister.Location = new Point(1218, 423);
+            btnCancelRegister.Margin = new Padding(4, 3, 4, 3);
             btnCancelRegister.Name = "btnCancelRegister";
-            btnCancelRegister.Size = new Size(102, 34);
+            btnCancelRegister.Size = new Size(143, 49);
             btnCancelRegister.TabIndex = 27;
             btnCancelRegister.Text = "Cancel";
-            btnCancelRegister.UseVisualStyleBackColor = true;
+            btnCancelRegister.UseVisualStyleBackColor = false;
             btnCancelRegister.Click += btnCancelRegister_Click;
             // 
             // dataGridEvents
             // 
             dataGridEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEvents.Location = new Point(41, 106);
+            dataGridEvents.Location = new Point(49, 120);
+            dataGridEvents.Margin = new Padding(4, 3, 4, 3);
             dataGridEvents.Name = "dataGridEvents";
             dataGridEvents.ReadOnly = true;
             dataGridEvents.RowHeadersWidth = 82;
-            dataGridEvents.Size = new Size(930, 312);
+            dataGridEvents.Size = new Size(1116, 355);
             dataGridEvents.TabIndex = 28;
             // 
             // AllEvents
             // 
-            AutoScaleDimensions = new SizeF(13F, 29F);
+            AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 613);
+            BackColor = Color.SeaShell;
+            ClientSize = new Size(1414, 697);
             Controls.Add(dataGridEvents);
             Controls.Add(btnCancelRegister);
             Controls.Add(btnDelete);
@@ -366,9 +405,11 @@
             Controls.Add(btnEventAttendees);
             Controls.Add(btnEditEvent);
             Controls.Add(groupBox1);
-            Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Tahoma", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "AllEvents";
             Text = "All Events";
+            Load += AllEvents_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             menuStrip2.ResumeLayout(false);
