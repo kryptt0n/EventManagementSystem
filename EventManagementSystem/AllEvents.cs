@@ -150,10 +150,10 @@ namespace EventManagementSystem
                 {
                     qSql += $"AND Location = '{txtBoxLocation.Text}' ";
                 }
-                DateTime dateTime = dateTimePickerEvent.Value;
-                string date = dateTime.ToString("yyyy-MM-dd");
-                if (!string.IsNullOrEmpty(date) && !dateTime.Equals(DateTime.MinValue.AddDays(1)))
+                if (dateTimePickerEvent.Checked)
                 {
+                    DateTime dateTime = dateTimePickerEvent.Value;
+                    string date = dateTime.ToString("yyyy-MM-dd");
                     qSql += $"AND Date = '{date}' ";
                 }
                 MySqlCommand mySqlCommand = new MySqlCommand(qSql, connection);

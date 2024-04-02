@@ -17,8 +17,8 @@ namespace EventManagementSystem
     {
         private MySqlConnection connection;
         private string eventId;
-        private List<string> registeredUsers;
-        private List<string> unregisteredUsers;
+        private List<string> registeredUsers = [];
+        private List<string> unregisteredUsers = [];
         public EventAttendeesList(string eventId)
         {
             InitializeComponent();
@@ -46,7 +46,9 @@ namespace EventManagementSystem
                     txtRemainSeats.Text = (remainSeats - 1).ToString();
                     string userName = listBoxUnregistered.SelectedItem.ToString();
                     listBoxUnregistered.Items.Remove(userName);
+                    unregisteredUsers.Remove(userName);
                     listBoxRegistered.Items.Add(userName);
+                    registeredUsers.Add(userName);
                 }
                 else
                 {
@@ -124,14 +126,18 @@ namespace EventManagementSystem
             Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnClearRegistered_Click(object sender, EventArgs e)
         {
-            txtEventName.Clear();
+            txtRegistered.Clear();
+            listBoxRegistered.Items.Clear();
+            listBoxRegistered.Items.AddRange(registeredUsers.ToArray());
         }
 
-        private void btnCancelSearchUser_Click(object sender, EventArgs e)
+        private void btnClearUnregistered_Click(object sender, EventArgs e)
         {
             txtUnregistered.Clear();
+            listBoxUnregistered.Items.Clear();
+            listBoxUnregistered.Items.AddRange(unregisteredUsers.ToArray());
         }
 
         private void LoadRegisteredAttendees()
@@ -246,7 +252,9 @@ namespace EventManagementSystem
                 txtRemainSeats.Text = (remainSeats + 1).ToString();
                 string userName = listBoxRegistered.SelectedItem.ToString();
                 listBoxRegistered.Items.Remove(userName);
+                registeredUsers.Remove(userName);
                 listBoxUnregistered.Items.Add(userName);
+                unregisteredUsers.Add(userName);
             }
             else
             {
@@ -290,12 +298,24 @@ namespace EventManagementSystem
 
         private void btnSearchRegistered_Click(object sender, EventArgs e)
         {
-            // Display from registered list
+            listBoxRegistered.Items.Clear();
+            string search = txtRegistered.Text.ToLower();
+            foreach (string userName in registeredUsers)
+            {
+                if (userName.ToLower().Contains(search))
+                    listBoxRegistered.Items.Add(userName);
+            }
         }
 
         private void btnSearchUnregistered_Click(object sender, EventArgs e)
         {
-            // Display from unregistered list
+            listBoxUnregistered.Items.Clear();
+            string search = txtUnregistered.Text.ToLower();
+            foreach (string userName in unregisteredUsers)
+            {
+                if (userName.ToLower().Contains(search))
+                    listBoxUnregistered.Items.Add(userName);
+            }
         }
     }
 }

@@ -47,13 +47,13 @@
             label1 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             groupBox1 = new GroupBox();
-            btnCancelSearchUser = new Button();
+            btnClearUnregistered = new Button();
             btnSearchUnregistered = new Button();
             txtUnregistered = new TextBox();
             label2 = new Label();
             listBoxUnregistered = new ListBox();
             groupBox2 = new GroupBox();
-            button3 = new Button();
+            btnClearRegistered = new Button();
             btnSearchRegistered = new Button();
             txtRegistered = new TextBox();
             label4 = new Label();
@@ -81,7 +81,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem, attendeeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1065, 33);
+            menuStrip1.Size = new Size(1065, 42);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -89,20 +89,20 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(60, 29);
+            fileToolStripMenuItem.Size = new Size(77, 38);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(164, 34);
+            loginToolStripMenuItem.Size = new Size(215, 44);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(164, 34);
+            exitToolStripMenuItem.Size = new Size(215, 44);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -110,20 +110,20 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(89, 29);
+            eventsToolStripMenuItem.Size = new Size(118, 38);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(210, 34);
+            viewEventsToolStripMenuItem.Size = new Size(275, 44);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(210, 34);
+            addEventToolStripMenuItem.Size = new Size(275, 44);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -131,20 +131,20 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(79, 29);
+            usersToolStripMenuItem.Size = new Size(104, 38);
             usersToolStripMenuItem.Text = "Users";
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(200, 34);
+            allUsersToolStripMenuItem.Size = new Size(261, 44);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(200, 34);
+            addUserToolStripMenuItem.Size = new Size(261, 44);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -152,20 +152,20 @@
             // 
             attendeeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { myEventsToolStripMenuItem, registForEventsToolStripMenuItem });
             attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
-            attendeeToolStripMenuItem.Size = new Size(112, 29);
+            attendeeToolStripMenuItem.Size = new Size(146, 38);
             attendeeToolStripMenuItem.Text = "Attendee";
             // 
             // myEventsToolStripMenuItem
             // 
             myEventsToolStripMenuItem.Name = "myEventsToolStripMenuItem";
-            myEventsToolStripMenuItem.Size = new Size(272, 34);
+            myEventsToolStripMenuItem.Size = new Size(359, 44);
             myEventsToolStripMenuItem.Text = "My Events";
             myEventsToolStripMenuItem.Click += myEventsToolStripMenuItem_Click;
             // 
             // registForEventsToolStripMenuItem
             // 
             registForEventsToolStripMenuItem.Name = "registForEventsToolStripMenuItem";
-            registForEventsToolStripMenuItem.Size = new Size(272, 34);
+            registForEventsToolStripMenuItem.Size = new Size(359, 44);
             registForEventsToolStripMenuItem.Text = "Regist for Events";
             registForEventsToolStripMenuItem.Click += registForEventsToolStripMenuItem_Click;
             // 
@@ -176,7 +176,7 @@
             txtRemainSeats.Margin = new Padding(4, 3, 4, 3);
             txtRemainSeats.Name = "txtRemainSeats";
             txtRemainSeats.ReadOnly = true;
-            txtRemainSeats.Size = new Size(235, 33);
+            txtRemainSeats.Size = new Size(235, 41);
             txtRemainSeats.TabIndex = 20;
             // 
             // label3
@@ -185,7 +185,7 @@
             label3.Location = new Point(457, 82);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(139, 25);
+            label3.Size = new Size(185, 34);
             label3.TabIndex = 19;
             label3.Text = "Remain Seats";
             // 
@@ -196,7 +196,7 @@
             txtEventName.Margin = new Padding(4, 3, 4, 3);
             txtEventName.Name = "txtEventName";
             txtEventName.ReadOnly = true;
-            txtEventName.Size = new Size(235, 33);
+            txtEventName.Size = new Size(235, 41);
             txtEventName.TabIndex = 18;
             // 
             // label1
@@ -205,13 +205,13 @@
             label1.Location = new Point(37, 82);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(125, 25);
+            label1.Size = new Size(167, 34);
             label1.TabIndex = 17;
             label1.Text = "Event Name";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnCancelSearchUser);
+            groupBox1.Controls.Add(btnClearUnregistered);
             groupBox1.Controls.Add(btnSearchUnregistered);
             groupBox1.Controls.Add(txtUnregistered);
             groupBox1.Controls.Add(label2);
@@ -225,18 +225,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "          Unregistered Users";
             // 
-            // btnCancelSearchUser
+            // btnClearUnregistered
             // 
-            btnCancelSearchUser.BackColor = Color.Wheat;
-            btnCancelSearchUser.FlatStyle = FlatStyle.Flat;
-            btnCancelSearchUser.Location = new Point(190, 136);
-            btnCancelSearchUser.Margin = new Padding(4, 3, 4, 3);
-            btnCancelSearchUser.Name = "btnCancelSearchUser";
-            btnCancelSearchUser.Size = new Size(117, 47);
-            btnCancelSearchUser.TabIndex = 17;
-            btnCancelSearchUser.Text = "Clear";
-            btnCancelSearchUser.UseVisualStyleBackColor = false;
-            btnCancelSearchUser.Click += btnCancelSearchUser_Click;
+            btnClearUnregistered.BackColor = Color.Wheat;
+            btnClearUnregistered.FlatStyle = FlatStyle.Flat;
+            btnClearUnregistered.Location = new Point(190, 136);
+            btnClearUnregistered.Margin = new Padding(4, 3, 4, 3);
+            btnClearUnregistered.Name = "btnClearUnregistered";
+            btnClearUnregistered.Size = new Size(117, 47);
+            btnClearUnregistered.TabIndex = 17;
+            btnClearUnregistered.Text = "Clear";
+            btnClearUnregistered.UseVisualStyleBackColor = false;
+            btnClearUnregistered.Click += btnClearUnregistered_Click;
             // 
             // btnSearchUnregistered
             // 
@@ -258,7 +258,7 @@
             txtUnregistered.Location = new Point(176, 73);
             txtUnregistered.Margin = new Padding(4, 3, 4, 3);
             txtUnregistered.Name = "txtUnregistered";
-            txtUnregistered.Size = new Size(175, 33);
+            txtUnregistered.Size = new Size(175, 41);
             txtUnregistered.TabIndex = 10;
             // 
             // label2
@@ -267,24 +267,24 @@
             label2.Location = new Point(47, 76);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(115, 25);
+            label2.Size = new Size(153, 34);
             label2.TabIndex = 9;
             label2.Text = "User Name";
             // 
             // listBoxUnregistered
             // 
             listBoxUnregistered.FormattingEnabled = true;
-            listBoxUnregistered.ItemHeight = 25;
+            listBoxUnregistered.ItemHeight = 34;
             listBoxUnregistered.Location = new Point(36, 209);
             listBoxUnregistered.Margin = new Padding(4, 3, 4, 3);
             listBoxUnregistered.Name = "listBoxUnregistered";
-            listBoxUnregistered.Size = new Size(336, 404);
+            listBoxUnregistered.Size = new Size(336, 378);
             listBoxUnregistered.TabIndex = 0;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
-            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(btnClearRegistered);
             groupBox2.Controls.Add(btnSearchRegistered);
             groupBox2.Controls.Add(txtRegistered);
             groupBox2.Controls.Add(label4);
@@ -298,18 +298,18 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "          Registered Attendees";
             // 
-            // button3
+            // btnClearRegistered
             // 
-            button3.BackColor = Color.Wheat;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(198, 136);
-            button3.Margin = new Padding(4, 3, 4, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(117, 47);
-            button3.TabIndex = 21;
-            button3.Text = "Clear";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnClearRegistered.BackColor = Color.Wheat;
+            btnClearRegistered.FlatStyle = FlatStyle.Flat;
+            btnClearRegistered.Location = new Point(198, 136);
+            btnClearRegistered.Margin = new Padding(4, 3, 4, 3);
+            btnClearRegistered.Name = "btnClearRegistered";
+            btnClearRegistered.Size = new Size(117, 47);
+            btnClearRegistered.TabIndex = 21;
+            btnClearRegistered.Text = "Clear";
+            btnClearRegistered.UseVisualStyleBackColor = false;
+            btnClearRegistered.Click += btnClearRegistered_Click;
             // 
             // btnSearchRegistered
             // 
@@ -331,7 +331,7 @@
             txtRegistered.Location = new Point(175, 74);
             txtRegistered.Margin = new Padding(4, 3, 4, 3);
             txtRegistered.Name = "txtRegistered";
-            txtRegistered.Size = new Size(175, 33);
+            txtRegistered.Size = new Size(175, 41);
             txtRegistered.TabIndex = 19;
             // 
             // label4
@@ -340,18 +340,18 @@
             label4.Location = new Point(55, 77);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(96, 25);
+            label4.Size = new Size(126, 34);
             label4.TabIndex = 18;
             label4.Text = "Attendee";
             // 
             // listBoxRegistered
             // 
             listBoxRegistered.FormattingEnabled = true;
-            listBoxRegistered.ItemHeight = 25;
+            listBoxRegistered.ItemHeight = 34;
             listBoxRegistered.Location = new Point(28, 209);
             listBoxRegistered.Margin = new Padding(4, 3, 4, 3);
             listBoxRegistered.Name = "listBoxRegistered";
-            listBoxRegistered.Size = new Size(336, 404);
+            listBoxRegistered.Size = new Size(336, 378);
             listBoxRegistered.TabIndex = 0;
             // 
             // moveRightBtn
@@ -408,28 +408,23 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.check1;
-            pictureBox1.Location = new Point(629, 145);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 45);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 18;
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.cross;
-            pictureBox2.Location = new Point(78, 143);
+            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(46, 47);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 27;
+            pictureBox2.Size = new Size(100, 50);
+            pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
             // EventAttendeesList
             // 
-            AutoScaleDimensions = new SizeF(12F, 25F);
+            AutoScaleDimensions = new SizeF(15F, 34F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
             ClientSize = new Size(1065, 919);
@@ -488,9 +483,9 @@
         private ListBox listBoxRegistered;
         private TextBox txtUnregistered;
         private Label label2;
-        private Button btnCancelSearchUser;
+        private Button btnClearUnregistered;
         private Button btnSearchUnregistered;
-        private Button button3;
+        private Button btnClearRegistered;
         private Button btnSearchRegistered;
         private TextBox txtRegistered;
         private Label label4;
