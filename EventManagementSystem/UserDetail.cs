@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static EventManagementSystem.AllUsers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EventManagementSystem
 {
@@ -191,30 +192,31 @@ namespace EventManagementSystem
                     catch (Exception ex)
                     {
                     MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }
+
+                    
                 }
 
-                    if (actionType == ActionType.Edit)
+                if (actionType == ActionType.Edit)
+                {
+                    try
                     {
-                        try
-                        {
-                            String qStr = $"UPDATE User SET Password = '{password}', RoleId = {roleId}, DateOfBirth = '{dob}', Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
-                            MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                            mySqlCommand.ExecuteNonQuery();
+                        String qStr = $"UPDATE User SET Password = '{password}', RoleId = {roleId}, DateOfBirth = '{dob}', Email = '{email}', Phone = '{phone}', Valid = '{valid}' WHERE UserName = '{userName}'";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
 
-                            MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
+                        MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
 
-                            AllUsers allUsers = new AllUsers();
-                            allUsers.Show();
-                            Hide();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
-                        }
+                        AllUsers allUsers = new AllUsers();
+                        allUsers.Show();
+                        Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                     }
                 }
-                
-               
+
             }
         }
 
@@ -247,9 +249,10 @@ namespace EventManagementSystem
             Hide();
         }
 
+        // hide password
         private void UserDetail_Load(object sender, EventArgs e)
         {
-
+            txtPassword.PasswordChar = '*';
         }
 
         private void label7_Click(object sender, EventArgs e)

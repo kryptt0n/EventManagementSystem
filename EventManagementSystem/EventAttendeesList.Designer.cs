@@ -116,14 +116,14 @@
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(270, 34);
+            viewEventsToolStripMenuItem.Size = new Size(210, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(270, 34);
+            addEventToolStripMenuItem.Size = new Size(210, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -223,7 +223,7 @@
             groupBox1.Size = new Size(398, 630);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Unregistered Users";
+            groupBox1.Text = "          Unregistered Users";
             // 
             // btnCancelSearchUser
             // 
@@ -296,7 +296,7 @@
             groupBox2.Size = new Size(398, 630);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Registered Attendees";
+            groupBox2.Text = "          Registered Attendees";
             // 
             // button3
             // 
@@ -410,7 +410,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.check1;
-            pictureBox1.Location = new Point(832, 143);
+            pictureBox1.Location = new Point(629, 145);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(45, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -420,7 +420,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.cross;
-            pictureBox2.Location = new Point(259, 143);
+            pictureBox2.Location = new Point(78, 143);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 47);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
