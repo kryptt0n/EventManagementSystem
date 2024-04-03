@@ -137,7 +137,7 @@ namespace EventManagementSystem
 
                 if (!string.IsNullOrEmpty(txtEventName.Text))
                 {
-                    qSql += $"AND EventName = '{txtEventName.Text}' ";
+                    qSql += $"AND LOWER(EventName) LIKE '%{txtEventName.Text.ToLower()}%' ";
                 }
                 if (!string.IsNullOrEmpty(txtEventCapacity.Text))
                 {
@@ -145,7 +145,7 @@ namespace EventManagementSystem
                 }
                 if (!string.IsNullOrEmpty(txtBoxLocation.Text))
                 {
-                    qSql += $"AND Location = '{txtBoxLocation.Text}' ";
+                    qSql += $"AND LOWER(Location) LIKE '%{txtBoxLocation.Text.ToLower()}%' ";
                 }
                 if (dateTimePickerEvent.Checked)
                 {
@@ -294,7 +294,7 @@ namespace EventManagementSystem
             }
             else
             {
-                MessageBox.Show("Please select a row to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select an event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -315,7 +315,7 @@ namespace EventManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"You are not registered", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show($"You are not registered for this event", "Error", MessageBoxButtons.OK);
                 }
             }
             else

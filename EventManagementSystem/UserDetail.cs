@@ -20,7 +20,7 @@ namespace EventManagementSystem
         private MySqlConnection connection = Program.db.GetConnection();
 
         private ActionType actionType;
-        
+
         // constructor for add new user
         public UserDetail(ActionType action)
         {
@@ -105,13 +105,13 @@ namespace EventManagementSystem
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            if(actionType == ActionType.Add)
+            if (actionType == ActionType.Add || actionType == ActionType.Edit)
             {
                 this.Close();
                 AllUsers allUsers = new AllUsers();
                 allUsers.Show();
             }
-            if(actionType == ActionType.Signup)
+            if (actionType == ActionType.Signup)
             {
                 this.Close();
             }
@@ -133,7 +133,7 @@ namespace EventManagementSystem
                 {
                     roleId = 1001;
                 }
-                if(managerRadioBtn.Checked)
+                if (managerRadioBtn.Checked)
                 {
                     roleId = 1002;
                 }
@@ -163,18 +163,18 @@ namespace EventManagementSystem
                             allUsers.Show();
                             Hide();
                         }
-                        if(actionType == ActionType.Signup)
+                        if (actionType == ActionType.Signup)
                         {
                             Hide();
                         }
-                        
+
                     }
                     catch (Exception ex)
                     {
-                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                     }
 
-                    
+
                 }
 
                 if (actionType == ActionType.Edit)
@@ -331,7 +331,7 @@ namespace EventManagementSystem
         {
             if (comboBoxValid.SelectedIndex != -1)
             {
-                return true; 
+                return true;
             }
             else
             {
@@ -365,7 +365,14 @@ namespace EventManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            Hide();
         }
     }
 }

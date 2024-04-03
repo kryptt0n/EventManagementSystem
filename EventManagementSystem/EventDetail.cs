@@ -149,6 +149,7 @@ namespace EventManagementSystem
         {
             LoginPage loginPage = new LoginPage();
             loginPage.Show();
+            Hide();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
