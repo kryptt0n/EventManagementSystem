@@ -27,6 +27,14 @@ namespace EventManagementSystem
             LoadRegisteredAttendees();
             LoadAttendees();
             LoadEventInfo();
+            ConfigureVisibleElements();
+        }
+
+        private void ConfigureVisibleElements()
+        {
+            bool isAdmin = CurrentUser.User.Role == Role.Administrator;
+            usersToolStripMenuItem.Visible = isAdmin;
+            addEventToolStripMenuItem.Visible = isAdmin;
         }
 
         private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)

@@ -38,9 +38,6 @@
             usersToolStripMenuItem = new ToolStripMenuItem();
             allUsersToolStripMenuItem = new ToolStripMenuItem();
             addUserToolStripMenuItem = new ToolStripMenuItem();
-            attendeeToolStripMenuItem = new ToolStripMenuItem();
-            myEventsToolStripMenuItem = new ToolStripMenuItem();
-            registForEventsToolStripMenuItem = new ToolStripMenuItem();
             txtRemainSeats = new TextBox();
             label3 = new Label();
             txtEventName = new TextBox();
@@ -62,13 +59,9 @@
             moveLeftBtn = new Button();
             btnSave = new Button();
             btnCancel = new Button();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             menuStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +71,7 @@
             menuStrip1.Font = new Font("Tahoma", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.GripStyle = ToolStripGripStyle.Visible;
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem, attendeeToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1065, 42);
@@ -95,14 +88,14 @@
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(215, 44);
-            loginToolStripMenuItem.Text = "Login";
+            loginToolStripMenuItem.Size = new Size(359, 44);
+            loginToolStripMenuItem.Text = "Log off";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(215, 44);
+            exitToolStripMenuItem.Size = new Size(359, 44);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -147,27 +140,6 @@
             addUserToolStripMenuItem.Size = new Size(261, 44);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
-            // 
-            // attendeeToolStripMenuItem
-            // 
-            attendeeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { myEventsToolStripMenuItem, registForEventsToolStripMenuItem });
-            attendeeToolStripMenuItem.Name = "attendeeToolStripMenuItem";
-            attendeeToolStripMenuItem.Size = new Size(146, 38);
-            attendeeToolStripMenuItem.Text = "Attendee";
-            // 
-            // myEventsToolStripMenuItem
-            // 
-            myEventsToolStripMenuItem.Name = "myEventsToolStripMenuItem";
-            myEventsToolStripMenuItem.Size = new Size(359, 44);
-            myEventsToolStripMenuItem.Text = "My Events";
-            myEventsToolStripMenuItem.Click += myEventsToolStripMenuItem_Click;
-            // 
-            // registForEventsToolStripMenuItem
-            // 
-            registForEventsToolStripMenuItem.Name = "registForEventsToolStripMenuItem";
-            registForEventsToolStripMenuItem.Size = new Size(359, 44);
-            registForEventsToolStripMenuItem.Text = "Regist for Events";
-            registForEventsToolStripMenuItem.Click += registForEventsToolStripMenuItem_Click;
             // 
             // txtRemainSeats
             // 
@@ -406,30 +378,12 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 50);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
             // EventAttendeesList
             // 
             AutoScaleDimensions = new SizeF(15F, 34F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
             ClientSize = new Size(1065, 919);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(moveLeftBtn);
@@ -452,8 +406,6 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -491,10 +443,5 @@
         private Label label4;
         private Button btnSave;
         private Button btnCancel;
-        private ToolStripMenuItem attendeeToolStripMenuItem;
-        private ToolStripMenuItem myEventsToolStripMenuItem;
-        private ToolStripMenuItem registForEventsToolStripMenuItem;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }

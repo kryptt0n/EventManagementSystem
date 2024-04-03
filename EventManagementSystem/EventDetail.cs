@@ -26,6 +26,7 @@ namespace EventManagementSystem
             InitializeComponent();
             connection = Program.db.GetConnection();
             LoadManagers();
+            ConfigureVisibleElements();
         }
 
         public EventDetail(ActionType action, DataGridViewRow row = null) : this()
@@ -321,6 +322,14 @@ namespace EventManagementSystem
                 MessageBox.Show("Valid can't be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+        }
+
+        private void ConfigureVisibleElements()
+        {
+            bool isAdmin = CurrentUser.User.Role == Role.Administrator;
+            comboBoxManager.Enabled = isAdmin;
+            usersToolStripMenuItem.Visible = isAdmin;
+            addEventToolStripMenuItem.Visible = isAdmin;
         }
     }
 }

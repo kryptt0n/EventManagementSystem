@@ -25,28 +25,8 @@ namespace EventManagementSystem
         public UserDetail(ActionType action)
         {
             InitializeComponent();
-            this.actionType = action;
-
-            // control the layout when load the page
-            if(action == ActionType.Add)
-            {
-                this.Text = "Add User";
-                // when add new user, the valid status locked to Y
-                comboBoxValid.SelectedIndex = 0;
-                comboBoxValid.Enabled = false;
-            }
-            if(action == ActionType.Signup)
-            {
-                this.Text = "Sign Up";
-                menuStrip1.Visible = false;
-                attendeeRadioBtn.Checked = true;
-                attendeeRadioBtn.Enabled = false;
-                adminRadioBtn.Enabled = false;
-                managerRadioBtn.Enabled = false;
-                comboBoxValid.SelectedIndex = 0;
-                comboBoxValid.Enabled = false;
-            }
-
+            actionType = action;
+            ConfigureVisibleElements();
 
         }
 
@@ -357,6 +337,29 @@ namespace EventManagementSystem
             {
                 MessageBox.Show("Valid can't be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+        }
+
+        private void ConfigureVisibleElements()
+        {
+            // control the layout when load the page
+            if (actionType == ActionType.Add)
+            {
+                this.Text = "Add User";
+                // when add new user, the valid status locked to Y
+                comboBoxValid.SelectedIndex = 0;
+                comboBoxValid.Enabled = false;
+            }
+            if (actionType == ActionType.Signup)
+            {
+                this.Text = "Sign Up";
+                menuStrip1.Visible = false;
+                attendeeRadioBtn.Checked = true;
+                attendeeRadioBtn.Enabled = false;
+                adminRadioBtn.Enabled = false;
+                managerRadioBtn.Enabled = false;
+                comboBoxValid.SelectedIndex = 0;
+                comboBoxValid.Enabled = false;
             }
         }
 

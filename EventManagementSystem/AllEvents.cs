@@ -21,7 +21,7 @@ namespace EventManagementSystem
         {
             InitializeComponent();
             LoadAlldata();
-            DisplayButtons();
+            ConfigureVisibleElements();
         }
 
         private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,11 +133,8 @@ namespace EventManagementSystem
         {
             try
             {
-                string qSql = """
-                        SELECT *
-                        FROM Events
-                        WHERE Valid = 'Y' 
-                        """;
+                string qSql = GetSelectRequest();
+
                 if (!string.IsNullOrEmpty(txtEventName.Text))
                 {
                     qSql += $"AND EventName = '{txtEventName.Text}' ";
@@ -184,12 +181,12 @@ namespace EventManagementSystem
         {
             try
             {
-                string qStr = """
-                    SELECT *
-                    FROM Events
-                    WHERE Valid = 'Y'
-                    """;
+                string qStr = GetSelectRequest();
 
+                if (CurrentUser.User.Role == Role.Manager)
+                {
+                    qStr += $"AND ManagerName = '{CurrentUser.User.Username}'";
+                }
                 MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                 using (MySqlDataReader dataReader = mySqlCommand.ExecuteReader())
                 {
@@ -209,6 +206,27 @@ namespace EventManagementSystem
                 MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
             }
 
+        }
+
+        private string GetSelectRequest()
+        {
+            string qStr = """
+                    SELECT *
+                    FROM Events
+                    WHERE Valid = 'Y' 
+                    """;
+            if (checkBoxMyEvents.Checked)
+            {
+                qStr += $"""
+                    AND EventId IN (
+                        SELECT EventId
+                        FROM Register
+                        WHERE UserName = '{CurrentUser.User.Username}'
+                    ) 
+                    """;
+            }
+
+            return qStr;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -239,15 +257,19 @@ namespace EventManagementSystem
             }
         }
 
-        private void DisplayButtons()
+        private void ConfigureVisibleElements()
         {
             bool isAttendee = CurrentUser.User.Role == Role.Attendee;
-            btnAddEvent.Visible = !isAttendee;
+            bool isAdmin = CurrentUser.User.Role == Role.Administrator;
+            btnAddEvent.Visible = isAdmin;
             btnEditEvent.Visible = !isAttendee;
-            btnDelete.Visible = !isAttendee;
+            btnDelete.Visible = isAdmin;
             btnEventAttendees.Visible = !isAttendee;
             btnCancelRegister.Visible = isAttendee;
             btnRegister.Visible = isAttendee;
+            checkBoxMyEvents.Visible = isAttendee;
+            usersToolStripMenuItem.Visible = isAdmin;
+            toolStripMenuItem6.Visible = isAdmin;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -310,6 +332,11 @@ namespace EventManagementSystem
         private void dataGridEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void checkBoxMyEvents_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadAlldata();
         }
     }
 }
