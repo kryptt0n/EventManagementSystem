@@ -281,10 +281,20 @@ namespace EventManagementSystem
 
                     DataGridViewRow selectedRow = dataGridEvents.SelectedRows[0];
                     int eventId = (int)selectedRow.Cells["EventId"].Value;
-                    string qStr = $"INSERT INTO Register VALUES ('{CurrentUser.User.Username}', {eventId})";
-                    MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                    mySqlCommand.ExecuteNonQuery();
-                    MessageBox.Show("You have registered for this event!", "Successful registration", MessageBoxButtons.OK);
+                    int capacity = (int)selectedRow.Cells["Capacity"].Value;
+                    if (capacity > 0)
+                    {
+                        string qStr = $"INSERT INTO Register VALUES ('{CurrentUser.User.Username}', {eventId});" +
+                            $"UPDATE Events SET Capacity = {--capacity} WHERE EventId = {eventId}";
+                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
+                        mySqlCommand.ExecuteNonQuery();
+                        LoadAlldata();
+                        MessageBox.Show("You have registered for this event!", "Successful registration", MessageBoxButtons.OK);
+                    } else
+                    {
+                        MessageBox.Show("Not enough capacity for new attendees", "Warning",
+                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
 
                 }
                 catch (Exception ex)
@@ -307,9 +317,12 @@ namespace EventManagementSystem
 
                     DataGridViewRow selectedRow = dataGridEvents.SelectedRows[0];
                     int eventId = (int)selectedRow.Cells["EventId"].Value;
-                    string qStr = $"DELETE FROM Register WHERE UserName = '{CurrentUser.User.Username}' AND EventId = {eventId}";
+                    int capacity = (int)selectedRow.Cells["Capacity"].Value;
+                    string qStr = $"DELETE FROM Register WHERE UserName = '{CurrentUser.User.Username}' AND EventId = {eventId}; " +
+                        $"UPDATE Events SET Capacity = {++capacity} WHERE EventId = {eventId}; ";
                     MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
                     mySqlCommand.ExecuteNonQuery();
+                    LoadAlldata();
                     MessageBox.Show("You have canceled your registration for this event!", "Successful cancellation", MessageBoxButtons.OK);
 
                 }
