@@ -30,32 +30,7 @@ namespace EventManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // this part is only for testing layout
-            /* if(string.IsNullOrWhiteSpace(txtUserName.Text))
-             {
-                 MessageBox.Show("Please enter user name.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-             }
-             else
-             {
-                 if(txtUserName.Text == "admin")
-                 {
-                     AllEvents allEventsAdmin = new AllEvents();
-                     allEventsAdmin.Show();
-                     Hide();
-                 }
-                 else if(txtUserName.Text == "manager")
-                 {
-                     AllEvents allEventsManager = new AllEvents();
-                     allEventsManager.Show();
-                     Hide();
-                 }
-                 else
-                 {
-                     AllEvents allEventsUser = new AllEvents();
-                     allEventsUser.Show();
-                     Hide();
-                 }
-             }*/
+            
             // Will be switched to database authentication
             if (CheckCredentials())
             {
@@ -79,7 +54,7 @@ namespace EventManagementSystem
             }
             else
             {
-                MessageBox.Show("User was not found!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Incorrect user name or password!", "Error", MessageBoxButtons.OK);
             }
         }
 

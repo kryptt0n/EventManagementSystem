@@ -216,9 +216,11 @@ namespace EventManagementSystem
                 {
                     result += $"'{user}', ";
                 }
+                result = result.Remove(result.Length - 2);
+                result += ")";
             }
-            result = result.Remove(result.Length - 2);
-            result += ")";
+            
+            
             return result;
         }
         private void LoadEventInfo()
@@ -290,17 +292,21 @@ namespace EventManagementSystem
         {
             try
             {
-                string sql = "";
-                foreach (string userName in registeredUsers)
+                if (listBoxRegistered.Items.Count > 0)
                 {
-                    sql += $"INSERT INTO Register VALUES ('{userName}', {eventId});";
+                    string sql = "";
+                    foreach (string userName in registeredUsers)
+                    {
+                        sql += $"INSERT INTO Register VALUES ('{userName}', {eventId});";
+                    }
+                    MySqlCommand command = new MySqlCommand(sql, connection);
+                    command.ExecuteNonQuery();
                 }
-                MySqlCommand command = new MySqlCommand(sql, connection);
-                command.ExecuteNonQuery();
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                MessageBox.Show(" Error in Database Operation0", "Error", MessageBoxButtons.OK);
             }
         }
 
