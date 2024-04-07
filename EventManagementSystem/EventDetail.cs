@@ -30,12 +30,12 @@ namespace EventManagementSystem
         }
 
         public EventDetail(ActionType action, DataGridViewRow row = null) : this()
-        { 
+        {
             if (action == ActionType.Add)
             {
                 comboBoxValid.SelectedIndex = 0;
                 comboBoxValid.Enabled = false;
-            } 
+            }
             else if (action == ActionType.Edit)
             {
                 if (row != null)
@@ -114,7 +114,7 @@ namespace EventManagementSystem
                 AllEvents form = new AllEvents();
                 form.Show();
                 Hide();
-            } 
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -266,16 +266,20 @@ namespace EventManagementSystem
         // validate capacity is int and not null
         private bool CapacityValidate()
         {
-            if (!string.IsNullOrEmpty(txtEventCapacity.Text))
+            if (string.IsNullOrEmpty(txtEventCapacity.Text))
             {
-                int i;
-
-                if (!int.TryParse(txtEventCapacity.Text, out i))
-                {
-                    MessageBox.Show("Input a number for capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+                MessageBox.Show("Please enter a value for capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false; // Return false indicating validation failure
             }
+            
+            int i;
+
+            if (!int.TryParse(txtEventCapacity.Text, out i))
+            {
+                MessageBox.Show("Input a number for capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            
             return true;
         }
 
@@ -331,6 +335,11 @@ namespace EventManagementSystem
             comboBoxManager.Enabled = isAdmin;
             usersToolStripMenuItem.Visible = isAdmin;
             addEventToolStripMenuItem.Visible = isAdmin;
+        }
+
+        private void EventDetail_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

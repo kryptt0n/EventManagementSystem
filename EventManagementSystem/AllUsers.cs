@@ -179,7 +179,7 @@ namespace EventManagementSystem
                 dataTable.Load(dataReader);
                 dataGridUsers.DataSource = dataTable;
 
-                string columnNameToHide = "Password"; // Change this to the name of the column you want to hide
+                string columnNameToHide = "Password"; 
                 if (dataGridUsers.Columns.Contains("Password"))
                 {
                     dataGridUsers.Columns[columnNameToHide].Visible = false;

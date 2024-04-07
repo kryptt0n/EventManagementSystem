@@ -153,6 +153,10 @@ namespace EventManagementSystem
                     string date = dateTime.ToString("yyyy-MM-dd");
                     qSql += $"AND Date = '{date}' ";
                 }
+                if (CurrentUser.User.Role == Role.Manager)
+                {
+                    qSql += $"AND ManagerName = '{CurrentUser.User.Username}' ";
+                }
                 MySqlCommand mySqlCommand = new MySqlCommand(qSql, connection);
                 using (MySqlDataReader dataReader = mySqlCommand.ExecuteReader())
                 {
@@ -194,7 +198,7 @@ namespace EventManagementSystem
                     dataTable.Load(dataReader);
                     dataGridEvents.DataSource = dataTable;
 
-                    string columnNameToHide = "EventId"; // Change this to the name of the column you want to hide
+                    string columnNameToHide = "EventId"; 
                     if (dataGridEvents.Columns.Contains("EventId"))
                     {
                         dataGridEvents.Columns[columnNameToHide].Visible = false;
@@ -212,9 +216,13 @@ namespace EventManagementSystem
         {
             string qStr = """
                     SELECT *
-                    FROM Events
-                    WHERE Valid = 'Y' 
+                    FROM Events 
+                    WHERE 1 = 1 
                     """;
+            if (CurrentUser.User.Role == Role.Attendee)
+            {
+                qStr += """ AND Valid = 'Y'""";
+            }
             if (checkBoxMyEvents.Checked)
             {
                 qStr += $"""
