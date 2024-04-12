@@ -148,7 +148,7 @@
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(1002, 620);
+            ClientSize = new Size(1013, 625);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);

@@ -64,7 +64,7 @@
             label1.Location = new Point(30, 61);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(106, 39);
+            label1.Size = new Size(79, 29);
             label1.TabIndex = 1;
             label1.Text = "Users";
             // 
@@ -118,7 +118,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1090, 42);
+            menuStrip1.Size = new Size(1097, 33);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -126,20 +126,20 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(77, 38);
+            fileToolStripMenuItem.Size = new Size(60, 29);
             fileToolStripMenuItem.Text = "File";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(359, 44);
+            loginToolStripMenuItem.Size = new Size(179, 34);
             loginToolStripMenuItem.Text = "Log off";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(359, 44);
+            exitToolStripMenuItem.Size = new Size(179, 34);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -147,20 +147,20 @@
             // 
             eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
             eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(118, 38);
+            eventsToolStripMenuItem.Size = new Size(89, 29);
             eventsToolStripMenuItem.Text = "Events";
             // 
             // viewEventsToolStripMenuItem
             // 
             viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(275, 44);
+            viewEventsToolStripMenuItem.Size = new Size(210, 34);
             viewEventsToolStripMenuItem.Text = "All Events";
             viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
             // 
             // addEventToolStripMenuItem
             // 
             addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(275, 44);
+            addEventToolStripMenuItem.Size = new Size(210, 34);
             addEventToolStripMenuItem.Text = "Add Event";
             addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
             // 
@@ -168,21 +168,21 @@
             // 
             usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
             usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(104, 38);
+            usersToolStripMenuItem.Size = new Size(79, 29);
             usersToolStripMenuItem.Text = "Users";
             usersToolStripMenuItem.Click += usersToolStripMenuItem_Click;
             // 
             // allUsersToolStripMenuItem
             // 
             allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(261, 44);
+            allUsersToolStripMenuItem.Size = new Size(200, 34);
             allUsersToolStripMenuItem.Text = "All Users";
             allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
             // 
             // addUserToolStripMenuItem
             // 
             addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(261, 44);
+            addUserToolStripMenuItem.Size = new Size(200, 34);
             addUserToolStripMenuItem.Text = "Add User";
             addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
             // 
@@ -241,7 +241,7 @@
             attendeeRadioBtn.Location = new Point(541, 114);
             attendeeRadioBtn.Margin = new Padding(4, 2, 4, 2);
             attendeeRadioBtn.Name = "attendeeRadioBtn";
-            attendeeRadioBtn.Size = new Size(157, 38);
+            attendeeRadioBtn.Size = new Size(121, 29);
             attendeeRadioBtn.TabIndex = 8;
             attendeeRadioBtn.TabStop = true;
             attendeeRadioBtn.Text = "Attendee";
@@ -254,7 +254,7 @@
             managerRadioBtn.Location = new Point(541, 81);
             managerRadioBtn.Margin = new Padding(4, 2, 4, 2);
             managerRadioBtn.Name = "managerRadioBtn";
-            managerRadioBtn.Size = new Size(154, 38);
+            managerRadioBtn.Size = new Size(118, 29);
             managerRadioBtn.TabIndex = 7;
             managerRadioBtn.TabStop = true;
             managerRadioBtn.Text = "Manager";
@@ -267,7 +267,7 @@
             adminRadioBtn.Location = new Point(541, 48);
             adminRadioBtn.Margin = new Padding(4, 2, 4, 2);
             adminRadioBtn.Name = "adminRadioBtn";
-            adminRadioBtn.Size = new Size(124, 38);
+            adminRadioBtn.Size = new Size(97, 29);
             adminRadioBtn.TabIndex = 6;
             adminRadioBtn.TabStop = true;
             adminRadioBtn.Text = "Admin";
@@ -280,7 +280,7 @@
             label3.Location = new Point(467, 48);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(68, 34);
+            label3.Size = new Size(52, 25);
             label3.TabIndex = 2;
             label3.Text = "Role";
             // 
@@ -291,7 +291,7 @@
             txtSearchName.Location = new Point(151, 48);
             txtSearchName.Margin = new Padding(4, 2, 4, 2);
             txtSearchName.Name = "txtSearchName";
-            txtSearchName.Size = new Size(186, 41);
+            txtSearchName.Size = new Size(186, 33);
             txtSearchName.TabIndex = 1;
             // 
             // label2
@@ -301,7 +301,7 @@
             label2.Location = new Point(55, 48);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(88, 34);
+            label2.Size = new Size(66, 25);
             label2.TabIndex = 0;
             label2.Text = "Name";
             label2.Click += label2_Click;
@@ -322,10 +322,10 @@
             // 
             // AllUsers
             // 
-            AutoScaleDimensions = new SizeF(15F, 34F);
+            AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(1090, 617);
+            ClientSize = new Size(1097, 624);
             Controls.Add(dataGridUsers);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);

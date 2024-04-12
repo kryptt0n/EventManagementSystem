@@ -205,7 +205,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 2, 0, 2);
-            menuStrip1.Size = new Size(674, 33);
+            menuStrip1.Size = new Size(681, 33);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -219,14 +219,14 @@
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(270, 34);
+            loginToolStripMenuItem.Size = new Size(179, 34);
             loginToolStripMenuItem.Text = "Log off";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(270, 34);
+            exitToolStripMenuItem.Size = new Size(179, 34);
             exitToolStripMenuItem.Text = "Exit";
             // 
             // eventsToolStripMenuItem
@@ -371,7 +371,7 @@
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(674, 793);
+            ClientSize = new Size(681, 799);
             Controls.Add(comboBoxValid);
             Controls.Add(label7);
             Controls.Add(txtPassword);

@@ -74,7 +74,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1077, 33);
+            menuStrip1.Size = new Size(1083, 33);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -383,7 +383,7 @@
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(1077, 923);
+            ClientSize = new Size(1083, 928);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(moveLeftBtn);
